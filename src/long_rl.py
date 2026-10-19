@@ -55,11 +55,19 @@ def train(task,seed,mode,n,models=None):
     env.close();return agent
 
 def collect(task,agent,seed,n):
+    """Mix teacher, mildly perturbed, and random-action episodes to obtain outcome diversity.
+    All training labels are still oracle outcomes; never call this a non-oracle method.
+    """
     env=gym.make(task);eps=[]
+    rng=np.random.default_rng(seed+9407)
+    action_noise=(0.0,0.02,0.08,0.25,0.6,1.0)
     for j in range(n):
         s,_=env.reset(seed=100000*seed+j);traj=[];steps=0
+        epsilon=action_noise[j%len(action_noise)]
         while True:
-            a,_=agent.predict(s,deterministic=False);a=int(a)
+            if rng.random()<epsilon:a=int(env.action_space.sample())
+            else:
+                a,_=agent.predict(s,deterministic=False);a=int(a)
             nxt,_,term,trunc,_=env.step(a);steps+=1
             traj.append((feature(s,a,env.action_space.n),proxy(task,nxt)))
             s=nxt
