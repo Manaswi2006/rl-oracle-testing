@@ -1,0 +1,39 @@
+name: Long CPU PPO reward experiments
+on:
+  push:
+    paths:
+      - 'src/long_rl.py'
+      - '.github/workflows/long-cpu-rl.yml'
+  workflow_dispatch:
+jobs:
+  long-rl:
+    strategy:
+      fail-fast: false
+      matrix:
+        task: ['CartPole-v1', 'Acrobot-v1']
+        seed: [0, 1, 2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: read
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU RL packages
+        run: |
+          python -m pip install -U pip
+          python -m pip install "gymnasium[classic-control]==1.1.1" "stable-baselines3==2.6.0" "scikit-learn==1.7.2" "numpy==2.2.6"
+      - name: Train teacher and six PPO reward variants
+        run: python -u src/long_rl.py --task ${{ matrix.task }} --seed ${{ matrix.seed }} --teacher-steps 120000 --train-steps 100000 --episodes 90 --eval-episodes 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: long-rl-${{ matrix.task }}-seed${{ matrix.seed }}
+          path: results/long/
+          if-no-files-found: warn
