@@ -1,0 +1,26 @@
+name: CPU reward-method screening
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+jobs:
+  cpu-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python src/screen.py --out results --seeds 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cpu-screen-results
+          path: results/
+          if-no-files-found: warn
