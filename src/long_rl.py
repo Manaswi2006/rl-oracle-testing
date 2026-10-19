@@ -59,6 +59,7 @@ def collect(task,agent,seed,n):
     All training labels are still oracle outcomes; never call this a non-oracle method.
     """
     env=gym.make(task);eps=[]
+    env.action_space.seed(seed+9407)
     rng=np.random.default_rng(seed+9407)
     action_noise=(0.0,0.02,0.08,0.25,0.6,1.0)
     for j in range(n):
