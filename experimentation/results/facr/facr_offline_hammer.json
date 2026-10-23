@@ -1,0 +1,284 @@
+{
+ "B1": [
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 1,
+   "test": "core_seed2 (in-dist)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.38190425460087396,
+   "brier": 0.7057730625971808,
+   "ece": 0.7057787833377749,
+   "pos_rate": 0.7057715654373169
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 1,
+   "test": "rrm_only (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.1585882665981541,
+   "brier": 0.006056631440241595,
+   "ece": 0.006047413752568418,
+   "pos_rate": 0.005948563572019339
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 1,
+   "test": "env_dense (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.2768463819280031,
+   "brier": 0.27062388078804495,
+   "ece": 0.2706307976106126,
+   "pos_rate": 0.27083835005760193
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 2,
+   "test": "core_seed2 (in-dist)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.645598125944102,
+   "brier": 0.7055890886520311,
+   "ece": 0.7056516590060476,
+   "pos_rate": 0.7057715654373169
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 2,
+   "test": "rrm_only (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.3527352490934512,
+   "brier": 0.006475048829620882,
+   "ece": 0.0065429864215075725,
+   "pos_rate": 0.005948563572019339
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 2,
+   "test": "env_dense (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.3816766595759017,
+   "brier": 0.2695210184607995,
+   "ece": 0.26924049638545183,
+   "pos_rate": 0.27083835005760193
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 4,
+   "test": "core_seed2 (in-dist)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.865010240761555,
+   "brier": 0.6942494693161103,
+   "ece": 0.6982663156931294,
+   "pos_rate": 0.7057715654373169
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 4,
+   "test": "rrm_only (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.4225037564607919,
+   "brier": 0.007570881587443547,
+   "ece": 0.00692369281104657,
+   "pos_rate": 0.005948563572019339
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 4,
+   "test": "env_dense (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.766179667424314,
+   "brier": 0.26387020057772487,
+   "ece": 0.26433987026159456,
+   "pos_rate": 0.27083835005760193
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 8,
+   "test": "core_seed2 (in-dist)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.8752554815156448,
+   "brier": 0.6720336357126319,
+   "ece": 0.6817789557041649,
+   "pos_rate": 0.7057715654373169
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 8,
+   "test": "rrm_only (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.6823966502839693,
+   "brier": 0.006917582586479472,
+   "ece": 0.005383538443911833,
+   "pos_rate": 0.005948563572019339
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": 8,
+   "test": "env_dense (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.9011597396804844,
+   "brier": 0.2328452208350713,
+   "ece": 0.23712902747754083,
+   "pos_rate": 0.27083835005760193
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": "all(409)",
+   "test": "core_seed2 (in-dist)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.9823165021496983,
+   "brier": 0.04572052730472659,
+   "ece": 0.02798944395782056,
+   "pos_rate": 0.7057715654373169
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": "all(409)",
+   "test": "rrm_only (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.8897440665140198,
+   "brier": 0.010350717541358426,
+   "ece": 0.021262070315954715,
+   "pos_rate": 0.005948563572019339
+  },
+  {
+   "task": "hammer",
+   "n_train_pos_eps": "all(409)",
+   "test": "env_dense (distribution shift)",
+   "predictor": "V(s,50) learned",
+   "auc": 0.9877302632226841,
+   "brier": 0.032967943047650626,
+   "ece": 0.01669188579717687,
+   "pos_rate": 0.27083835005760193
+  }
+ ],
+ "B2": [
+  {
+   "task": "hammer",
+   "predictor": "FACR Q_cf (learned dyn ensemble, V horizon 49)",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.18484168920852329,
+   "advantage_pearson": 0.09487130110746354,
+   "top1_ok": 0.36363636363636365,
+   "n_states": 360
+  },
+  {
+   "task": "hammer",
+   "predictor": "V(true simulator next state, 49) = success-value baseline w/ perfect dynamics",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.20196846664775853,
+   "advantage_pearson": 0.09913197244075501,
+   "top1_ok": 0.3939393939393939,
+   "n_states": 360
+  },
+  {
+   "task": "hammer",
+   "predictor": "FRM reward of true next state (geometric proximity)",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.2566859234799578,
+   "advantage_pearson": 0.13303938791906667,
+   "top1_ok": 0.42424242424242425,
+   "n_states": 360
+  },
+  {
+   "task": "hammer",
+   "predictor": "state-only V(s) (constant over actions; cannot rank actions)",
+   "n_states_discriminable": 13,
+   "within_state_spearman": NaN,
+   "advantage_pearson": 2.451106153200653e-19,
+   "top1_ok": 0.36363636363636365,
+   "n_states": 360
+  },
+  {
+   "task": "hammer",
+   "predictor": "STATE-LEVEL spearman(V(s,50), emp p_succ of policy actions)",
+   "within_state_spearman": 0.6921639527089298,
+   "n_states": 360
+  },
+  {
+   "task": "hammer",
+   "predictor": "STATE-LEVEL spearman(FRM(s), emp p_succ of policy actions)",
+   "within_state_spearman": 0.5561617046233114,
+   "n_states": 360
+  }
+ ],
+ "B4": [
+  {
+   "task": "hammer",
+   "ablation": "learned ensemble (5), H=50, all data",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.18484168920852329,
+   "advantage_pearson": 0.09487130110746354,
+   "top1_ok": 0.36363636363636365
+  },
+  {
+   "task": "hammer",
+   "ablation": "single dynamics member",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.1044117373212139,
+   "advantage_pearson": 0.07856494129664837,
+   "top1_ok": 0.36363636363636365
+  },
+  {
+   "task": "hammer",
+   "ablation": "perfect (simulator) next state",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.20196846664775853,
+   "advantage_pearson": 0.09913197244075501,
+   "top1_ok": 0.3939393939393939
+  },
+  {
+   "task": "hammer",
+   "ablation": "uncertainty filter: low-disagreement half of states",
+   "n_states_discriminable": 5,
+   "within_state_spearman": -0.16902552255723818,
+   "advantage_pearson": -0.0223128479956545,
+   "top1_ok": 0.0
+  },
+  {
+   "task": "hammer",
+   "ablation": "uncertainty filter: high-disagreement half of states",
+   "n_states_discriminable": 28,
+   "within_state_spearman": 0.24803226273812354,
+   "advantage_pearson": 0.10024488951124083,
+   "top1_ok": 0.42857142857142855
+  },
+  {
+   "task": "hammer",
+   "ablation": "planning horizon H=10 (vs empirical within-10)",
+   "n_states_discriminable": 26,
+   "within_state_spearman": 0.4075292745738418,
+   "advantage_pearson": 0.2231802835167028,
+   "top1_ok": 0.6538461538461539
+  },
+  {
+   "task": "hammer",
+   "ablation": "planning horizon H=25 (vs empirical within-25)",
+   "n_states_discriminable": 50,
+   "within_state_spearman": 0.24223714243439054,
+   "advantage_pearson": 0.12329382788442847,
+   "top1_ok": 0.44
+  },
+  {
+   "task": "hammer",
+   "ablation": "transition data fraction 0.1",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.16826849918300776,
+   "advantage_pearson": 0.057548141025725155,
+   "top1_ok": 0.30303030303030304
+  },
+  {
+   "task": "hammer",
+   "ablation": "transition data fraction 0.3",
+   "n_states_discriminable": 33,
+   "within_state_spearman": 0.05217610115709335,
+   "advantage_pearson": 0.048049793010657295,
+   "top1_ok": 0.30303030303030304
+  },
+  {
+   "task": "hammer",
+   "ablation": "model exploitation: mean[max_a Q_model - max_a V(true next)]",
+   "mean_gap": 0.004467123847646256,
+   "frac_states_model_overestimates_by_gt_0p1": 0.019444444444444445
+  }
+ ]
+}

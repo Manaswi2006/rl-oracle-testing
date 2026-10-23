@@ -1,0 +1,15 @@
+runs/stage0/core/dial_s0 env=metaworld_dial-turn-v2 seed=0 method=core
+runs/stage0/rrm_only/dial_s0 env=metaworld_dial-turn-v2 seed=0 method=rrm_only
+runs/stage1/psvm_oracle/dial_s0 env=metaworld_dial-turn-v2 seed=0 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_facr/dial_s0 env=metaworld_dial-turn-v2 seed=0 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/dial_s0 env=metaworld_dial-turn-v2 seed=0 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage0/core/dial_s1 env=metaworld_dial-turn-v2 seed=1 method=core
+runs/stage0/rrm_only/dial_s1 env=metaworld_dial-turn-v2 seed=1 method=rrm_only
+runs/stage1/psvm_oracle/dial_s1 env=metaworld_dial-turn-v2 seed=1 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_facr/dial_s1 env=metaworld_dial-turn-v2 seed=1 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/dial_s1 env=metaworld_dial-turn-v2 seed=1 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage0/core/dial_s2 env=metaworld_dial-turn-v2 seed=2 method=core
+runs/stage0/rrm_only/dial_s2 env=metaworld_dial-turn-v2 seed=2 method=rrm_only
+runs/stage1/psvm_oracle/dial_s2 env=metaworld_dial-turn-v2 seed=2 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_facr/dial_s2 env=metaworld_dial-turn-v2 seed=2 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/dial_s2 env=metaworld_dial-turn-v2 seed=2 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5

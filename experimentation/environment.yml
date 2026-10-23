@@ -1,0 +1,8 @@
+name: core-ext
+# Python 3.9 venv (uv) was used; this file documents the intent. Exact pins: requirements.lock
+# torch wheels come from https://download.pytorch.org/whl/cu117 (torch==1.13.1+cu117)
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - -r requirements.lock

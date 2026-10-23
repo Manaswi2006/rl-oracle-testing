@@ -1,0 +1,31 @@
+ablation,task,advantage_pearson,frac_states_model_overestimates_by_gt_0p1,mean_gap,n_states_discriminable,top1_ok,within_state_spearman
+"learned ensemble (5), H=50, all data",button,-0.025244952110074523,,,14,0.35714285714285715,0.02564409412977599
+single dynamics member,button,-0.0166865197014708,,,14,0.42857142857142855,0.12308955443585286
+perfect (simulator) next state,button,-0.02467028311670499,,,14,0.5,-0.025802910859271586
+uncertainty filter: low-disagreement half of states,button,0.025914180927365638,,,1,0.0,0.0
+uncertainty filter: high-disagreement half of states,button,-0.025880590330234356,,,13,0.38461538461538464,0.027616716755143374
+planning horizon H=10 (vs empirical within-10),button,0.5089369408800402,,,35,0.7142857142857143,0.5378427720612302
+planning horizon H=25 (vs empirical within-25),button,0.019271956697413342,,,15,0.5333333333333333,0.19853216799169815
+transition data fraction 0.1,button,-0.02204208634630874,,,14,0.5,0.14092178239899092
+transition data fraction 0.3,button,-0.0282555994786318,,,14,0.35714285714285715,0.011194743405443084
+model exploitation: mean[max_a Q_model - max_a V(true next)],button,,0.013888888888888888,-0.006508710133689477,,,
+"learned ensemble (5), H=50, all data",hammer,0.09487130110746354,,,33,0.36363636363636365,0.18484168920852329
+single dynamics member,hammer,0.07856494129664837,,,33,0.36363636363636365,0.1044117373212139
+perfect (simulator) next state,hammer,0.09913197244075501,,,33,0.3939393939393939,0.20196846664775853
+uncertainty filter: low-disagreement half of states,hammer,-0.0223128479956545,,,5,0.0,-0.16902552255723818
+uncertainty filter: high-disagreement half of states,hammer,0.10024488951124083,,,28,0.42857142857142855,0.24803226273812354
+planning horizon H=10 (vs empirical within-10),hammer,0.2231802835167028,,,26,0.6538461538461539,0.4075292745738418
+planning horizon H=25 (vs empirical within-25),hammer,0.12329382788442847,,,50,0.44,0.24223714243439054
+transition data fraction 0.1,hammer,0.057548141025725155,,,33,0.30303030303030304,0.16826849918300776
+transition data fraction 0.3,hammer,0.048049793010657295,,,33,0.30303030303030304,0.05217610115709335
+model exploitation: mean[max_a Q_model - max_a V(true next)],hammer,,0.019444444444444445,0.004467123847646256,,,
+"learned ensemble (5), H=50, all data",peg,0.003777750156539734,,,5,0.6,0.30980747935083996
+single dynamics member,peg,0.008288999611458216,,,5,0.6,0.34606503198507915
+perfect (simulator) next state,peg,0.010686450830494382,,,5,0.6,0.41895405969409455
+uncertainty filter: low-disagreement half of states,peg,0.03192108071175385,,,2,0.5,0.29683020299083324
+uncertainty filter: high-disagreement half of states,peg,0.0013695000946210307,,,3,0.6666666666666666,0.31845899692417773
+planning horizon H=10 (vs empirical within-10),peg,0.3493872183596326,,,41,0.7804878048780488,0.4906684468926129
+planning horizon H=25 (vs empirical within-25),peg,0.04103459079547189,,,32,0.46875,0.20754486438708966
+transition data fraction 0.1,peg,0.0014733631487430583,,,5,0.6,0.20666425531011404
+transition data fraction 0.3,peg,0.000432721959570918,,,5,0.6,0.3141666932949778
+model exploitation: mean[max_a Q_model - max_a V(true next)],peg,,0.030555555555555555,-0.0037646862190514737,,,

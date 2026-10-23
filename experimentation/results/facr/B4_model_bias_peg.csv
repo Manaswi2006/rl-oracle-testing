@@ -1,0 +1,11 @@
+ablation,task,advantage_pearson,frac_states_model_overestimates_by_gt_0p1,mean_gap,n_states_discriminable,top1_ok,within_state_spearman
+"learned ensemble (5), H=50, all data",peg,0.003777750156539734,,,5,0.6,0.30980747935083996
+single dynamics member,peg,0.008288999611458216,,,5,0.6,0.34606503198507915
+perfect (simulator) next state,peg,0.010686450830494382,,,5,0.6,0.41895405969409455
+uncertainty filter: low-disagreement half of states,peg,0.03192108071175385,,,2,0.5,0.29683020299083324
+uncertainty filter: high-disagreement half of states,peg,0.0013695000946210307,,,3,0.6666666666666666,0.31845899692417773
+planning horizon H=10 (vs empirical within-10),peg,0.3493872183596326,,,41,0.7804878048780488,0.4906684468926129
+planning horizon H=25 (vs empirical within-25),peg,0.04103459079547189,,,32,0.46875,0.20754486438708966
+transition data fraction 0.1,peg,0.0014733631487430583,,,5,0.6,0.20666425531011404
+transition data fraction 0.3,peg,0.000432721959570918,,,5,0.6,0.3141666932949778
+model exploitation: mean[max_a Q_model - max_a V(true next)],peg,,0.030555555555555555,-0.0037646862190514737,,,

@@ -1,0 +1,81 @@
+runs/stage2/rlf_attack/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/hammer_s0 env=metaworld_hammer-v2 seed=0 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/peg_s0 env=metaworld_peg-insert-side-v2 seed=0 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/hammer_s1 env=metaworld_hammer-v2 seed=1 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/peg_s1 env=metaworld_peg-insert-side-v2 seed=1 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/hammer_s2 env=metaworld_hammer-v2 seed=2 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/peg_s2 env=metaworld_peg-insert-side-v2 seed=2 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_hybrid/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=rlf rlf.selector=hybrid rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_random/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=rlf rlf.selector=random rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_disagreement/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=rlf rlf.selector=disagreement rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_hybrid/hammer_s0 env=metaworld_hammer-v2 seed=0 method=rlf rlf.selector=hybrid rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_random/hammer_s0 env=metaworld_hammer-v2 seed=0 method=rlf rlf.selector=random rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_disagreement/hammer_s0 env=metaworld_hammer-v2 seed=0 method=rlf rlf.selector=disagreement rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_hybrid/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=rlf rlf.selector=hybrid rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_random/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=rlf rlf.selector=random rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_disagreement/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=rlf rlf.selector=disagreement rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_hybrid/hammer_s1 env=metaworld_hammer-v2 seed=1 method=rlf rlf.selector=hybrid rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_random/hammer_s1 env=metaworld_hammer-v2 seed=1 method=rlf rlf.selector=random rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_disagreement/hammer_s1 env=metaworld_hammer-v2 seed=1 method=rlf rlf.selector=disagreement rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage2/rlf_attack/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage0/core/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=core
+runs/stage0/rrm_only/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=rrm_only
+runs/stage1/psvm_oracle/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_value/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=facr facr.variant=value
+runs/stage1/facr_facr/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_onpolicy/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=rlf rlf.selector=onpolicy rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_highreward/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=rlf rlf.selector=highreward rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rrm_extra/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=rrm_extra RRM_batch=25 max_feedback=625
+runs/stage2/rlf_attack/hammer_s3 env=metaworld_hammer-v2 seed=3 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage0/core/hammer_s3 env=metaworld_hammer-v2 seed=3 method=core
+runs/stage0/rrm_only/hammer_s3 env=metaworld_hammer-v2 seed=3 method=rrm_only
+runs/stage1/psvm_oracle/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_value/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=facr facr.variant=value
+runs/stage1/facr_facr/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/hammer_s3 env=metaworld_hammer-v2 seed=3 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_onpolicy/hammer_s3 env=metaworld_hammer-v2 seed=3 method=rlf rlf.selector=onpolicy rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_highreward/hammer_s3 env=metaworld_hammer-v2 seed=3 method=rlf rlf.selector=highreward rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rrm_extra/hammer_s3 env=metaworld_hammer-v2 seed=3 method=rrm_extra RRM_batch=25 max_feedback=625
+runs/stage2/rlf_attack/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage0/core/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=core
+runs/stage0/rrm_only/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=rrm_only
+runs/stage1/psvm_oracle/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_value/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=facr facr.variant=value
+runs/stage1/facr_facr/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_onpolicy/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=rlf rlf.selector=onpolicy rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_highreward/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=rlf rlf.selector=highreward rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rrm_extra/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=rrm_extra RRM_batch=25 max_feedback=625
+runs/stage2/rlf_attack/hammer_s4 env=metaworld_hammer-v2 seed=4 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage0/core/hammer_s4 env=metaworld_hammer-v2 seed=4 method=core
+runs/stage0/rrm_only/hammer_s4 env=metaworld_hammer-v2 seed=4 method=rrm_only
+runs/stage1/psvm_oracle/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_value/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=facr facr.variant=value
+runs/stage1/facr_facr/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/hammer_s4 env=metaworld_hammer-v2 seed=4 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_onpolicy/hammer_s4 env=metaworld_hammer-v2 seed=4 method=rlf rlf.selector=onpolicy rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_highreward/hammer_s4 env=metaworld_hammer-v2 seed=4 method=rlf rlf.selector=highreward rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rrm_extra/hammer_s4 env=metaworld_hammer-v2 seed=4 method=rrm_extra RRM_batch=25 max_feedback=625
+runs/stage2/rlf_attack/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage0/core/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=core
+runs/stage0/rrm_only/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=rrm_only
+runs/stage1/psvm_oracle/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_value/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=facr facr.variant=value
+runs/stage1/facr_facr/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_onpolicy/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=rlf rlf.selector=onpolicy rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_highreward/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=rlf rlf.selector=highreward rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rrm_extra/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=rrm_extra RRM_batch=25 max_feedback=625
+runs/stage2/rlf_attack/hammer_s5 env=metaworld_hammer-v2 seed=5 method=rlf rlf.selector=attack rlf.extra_capacity=125 rlf.Q=5 rlf.Qpos=2
+runs/stage0/core/hammer_s5 env=metaworld_hammer-v2 seed=5 method=core
+runs/stage0/rrm_only/hammer_s5 env=metaworld_hammer-v2 seed=5 method=rrm_only
+runs/stage1/psvm_oracle/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=psvm psvm.mode=oracle_hard
+runs/stage1/facr_value/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=facr facr.variant=value
+runs/stage1/facr_facr/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=facr facr.variant=facr
+runs/stage2/rlf_uncertainty/hammer_s5 env=metaworld_hammer-v2 seed=5 method=rlf rlf.selector=uncertainty rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_onpolicy/hammer_s5 env=metaworld_hammer-v2 seed=5 method=rlf rlf.selector=onpolicy rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rlf_highreward/hammer_s5 env=metaworld_hammer-v2 seed=5 method=rlf rlf.selector=highreward rlf.extra_capacity=125 rlf.Q=5
+runs/stage2/rrm_extra/hammer_s5 env=metaworld_hammer-v2 seed=5 method=rrm_extra RRM_batch=25 max_feedback=625

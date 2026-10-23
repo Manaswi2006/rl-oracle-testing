@@ -1,0 +1,274 @@
+{
+ "generated": "2026-10-23",
+ "overall_recommendation": "NONE",
+ "recommendation_rationale": "None of the three mechanisms is supported against its simplest control; the most evidence-based follow-up is a study of RRM + outcome reward under realistic (correlated) VLM outcome noise, which requires real-VLM experiments not run here.",
+ "confidence": {
+  "negative_conclusions": "moderate",
+  "generalisation_to_paper_setting": "low"
+ },
+ "setting": {
+  "tasks_main": [
+   "Button Press",
+   "Hammer",
+   "Peg Insert"
+  ],
+  "tasks_extra": [
+   "Dial Turn (key arms, 3 seeds)"
+  ],
+  "env_steps_per_run": 200000,
+  "seeds": "0-5 (Button Press, Hammer), 0-2 (Peg Insert, Dial Turn)",
+  "total_runs": 255,
+  "rrm_teacher": "noisy scripted teacher on env reward (no VLM); NOT an exact CoRe reproduction"
+ },
+ "baselines_observed_final_success_pct": {
+  "rrm_only": {
+   "button": 16.7,
+   "hammer": 16.7,
+   "peg": 0.0,
+   "dial": 33.3
+  },
+  "core": {
+   "button": 66.7,
+   "hammer": 66.7,
+   "peg": 0.0,
+   "dial": 0.0
+  },
+  "env_dense": {
+   "button": 100.0,
+   "hammer": 66.7,
+   "peg": 100.0
+  },
+  "env_sparse": {
+   "button": 0.0,
+   "hammer": 66.7,
+   "peg": 0.0
+  }
+ },
+ "ideas": {
+  "A_P_SVM": {
+   "status": "rejected_as_formulated",
+   "experiments_completed": [
+    "A1 oracle feasibility (+controls outcome_sparse, psvm_noRRM)",
+    "A2 label corruption (offline, synthetic)"
+   ],
+   "experiments_not_run": [
+    "A3 real VLM outcome labels",
+    "A4 mixing/architecture/online noisy-label ablations"
+   ],
+   "screening_criterion": {
+    "rule": "G>=0.5 on >=2 of 3 difficult tasks",
+    "passed": true,
+    "G": {
+     "button": 1.33,
+     "hammer": 1.0,
+     "peg": "undefined (both baselines 0%)"
+    },
+    "note": "formally met but not evidence for the mechanism: plain sparse outcome control beats it"
+   },
+   "main_quantitative": {
+    "psvm_oracle_final_success": {
+     "button": 83.3,
+     "hammer": 66.7,
+     "peg": 0.0,
+     "dial": 66.7
+    },
+    "outcome_sparse_control": {
+     "button": 100.0,
+     "hammer": 100.0,
+     "peg": 0.0,
+     "dial": 66.7
+    },
+    "psvm_noRRM": {
+     "button": 0.0,
+     "hammer": 33.3
+    },
+    "psvm_minus_outcome_sparse_bootstrap95": {
+     "button": [
+      -16.7,
+      [
+       -50.0,
+       0.0
+      ]
+     ],
+     "hammer": [
+      -33.3,
+      [
+       -66.7,
+       0.0
+      ]
+     ]
+    },
+    "A2_episode_auc_natural_prevalence": {
+     "iid_flip10": {
+      "hard": 0.892,
+      "soft_raw": 0.974
+     },
+     "correlated_sys40": {
+      "hard": 0.685,
+      "majority": 0.807,
+      "soft_raw": 0.749,
+      "soft_calibrated": 0.696
+     }
+    }
+   },
+   "novelty": "Incremental",
+   "major_risks": [
+    "oracle success labels used",
+    "probabilistic weighting not robust to correlated errors",
+    "no real-VLM labels tested"
+   ]
+  },
+  "B_FACR": {
+   "status": "rejected",
+   "experiments_completed": [
+    "B1 oracle success value",
+    "B2 counterfactual validity (simulator branching)",
+    "B3 policy learning (oracle)",
+    "B4 model-bias ablations (offline)"
+   ],
+   "experiments_not_run": [
+    "B5 non-oracle (VLM) FACR",
+    "pixel representations",
+    "perfect-simulator-dynamics policy learning"
+   ],
+   "screening_criterion": {
+    "rule": "must beat simpler success-value / progress baseline",
+    "passed": false
+   },
+   "main_quantitative": {
+    "B1_auc": "0.95-0.98 in-distribution; ECE 0.01-0.04",
+    "B2_within_state_spearman_Qcf": {
+     "button": 0.03,
+     "hammer": 0.19,
+     "peg": 0.31
+    },
+    "B2_perfect_dynamics_V": {
+     "button": -0.03,
+     "hammer": 0.2,
+     "peg": 0.42
+    },
+    "state_level_spearman_V_vs_emp": {
+     "button": 0.85,
+     "hammer": 0.69,
+     "peg": 0.67
+    },
+    "state_level_spearman_FRM_vs_emp": {
+     "button": -0.18,
+     "hammer": 0.56,
+     "peg": 0.19
+    },
+    "policy_final_success_button_hammer_peg": {
+     "facr_facr": [
+      50.0,
+      33.3,
+      0.0
+     ],
+     "facr_value": [
+      33.3,
+      0.0,
+      0.0
+     ],
+     "facr_progress": [
+      0.0,
+      33.3,
+      0.0
+     ]
+    },
+    "model_exploitation_frac_states_overestimate_gt_0.1": "1.4-3.1%"
+   },
+   "novelty": "Incremental (success-value part already established)",
+   "major_risks": [
+    "few action-discriminable states (5-33)",
+    "oracle supervision",
+    "cold start: needs successes first"
+   ]
+  },
+  "C_RLF": {
+   "status": "falsification_policy_rejected; verified-counterexample repair marginal",
+   "experiments_completed": [
+    "C1 (limited)",
+    "C2 selector comparison",
+    "C3 downstream repair",
+    "C5 distinctness",
+    "C6 matched comparison"
+   ],
+   "experiments_not_run": [
+    "C4 noisy/VLM verifier"
+   ],
+   "screening_criterion": {
+    "rule": "materially different failures AND beats on-policy correction and hard-negative mining",
+    "passed": false
+   },
+   "main_quantitative": {
+    "final_success_button_hammer": {
+     "rrm_extra_control": [
+      16.7,
+      0.0
+     ],
+     "rlf_onpolicy": [
+      50.0,
+      16.7
+     ],
+     "rlf_highreward": [
+      66.7,
+      16.7
+     ],
+     "rlf_uncertainty": [
+      66.7,
+      16.7
+     ],
+     "rlf_attack": [
+      66.7,
+      0.0
+     ]
+    },
+    "confirmed_failures_per_query": {
+     "onpolicy": 0.447,
+     "highreward": 0.778,
+     "uncertainty": 0.611,
+     "attack": 0.376,
+     "random": 0.205
+    },
+    "frac_confirmed_failure_cells_novel": {
+     "attack": 0.754,
+     "random": 0.703,
+     "onpolicy": 0.385,
+     "uncertainty": 0.413
+    },
+    "attack_extra_env_steps": 90000,
+    "first_attempt_flaw": "attack/hybrid/random/disagreement added 0 repair pairs; fixed with anchor queries; archived in runs/stage2_noanchor"
+   },
+   "novelty": "Potentially novel in setting; mechanism not supported",
+   "major_risks": [
+    "oracle verifier",
+    "n=6 bimodal outcomes",
+    "verifier independence untested with VLM"
+   ]
+  }
+ },
+ "scores_1_to_5": {
+  "A": {
+   "empirical": 1,
+   "novelty_confidence": 1,
+   "difficulty": 2
+  },
+  "B": {
+   "empirical": 1,
+   "novelty_confidence": 2,
+   "difficulty": 4
+  },
+  "C": {
+   "empirical": 2,
+   "novelty_confidence": 3,
+   "difficulty": 4
+  }
+ },
+ "recommended_direction": "RRM + outcome reward under realistic correlated VLM outcome noise (hypothesis, untested)",
+ "outstanding_experiments": [
+  "A3/B5/C4 with a real, authorised VLM",
+  "CoRe at 500k steps with online FRM refinement (our CoRe misses the paper on Peg Insert and Dial Turn)",
+  "more seeds / graded success metric",
+  "Sweep Into, Drawer Open, Soccer and SoftGym tasks"
+ ],
+ "statistical_caveat": "per-seed outcomes are ~binary (0/100); n=3-6; 95% bootstrap intervals about +-50 points; no significance claimed for differences below ~50 points"
+}

@@ -1,0 +1,19 @@
+predictor,task,advantage_pearson,n_states,n_states_discriminable,top1_ok,within_state_spearman
+"FACR Q_cf (learned dyn ensemble, V horizon 49)",button,-0.025244952110074523,360,14,0.35714285714285715,0.02564409412977599
+"V(true simulator next state, 49) = success-value baseline w/ perfect dynamics",button,-0.02467028311670499,360,14,0.5,-0.025802910859271586
+FRM reward of true next state (geometric proximity),button,-0.037655077987978944,360,14,0.42857142857142855,-0.0862140782588239
+state-only V(s) (constant over actions; cannot rank actions),button,1.3867819030754218e-17,360,8,0.21428571428571427,nan
+"STATE-LEVEL spearman(V(s,50), emp p_succ of policy actions)",button,,360,,,0.8468215754476324
+"STATE-LEVEL spearman(FRM(s), emp p_succ of policy actions)",button,,360,,,-0.1764321132404414
+"FACR Q_cf (learned dyn ensemble, V horizon 49)",hammer,0.09487130110746354,360,33,0.36363636363636365,0.18484168920852329
+"V(true simulator next state, 49) = success-value baseline w/ perfect dynamics",hammer,0.09913197244075501,360,33,0.3939393939393939,0.20196846664775853
+FRM reward of true next state (geometric proximity),hammer,0.13303938791906667,360,33,0.42424242424242425,0.2566859234799578
+state-only V(s) (constant over actions; cannot rank actions),hammer,2.451106153200653e-19,360,13,0.36363636363636365,nan
+"STATE-LEVEL spearman(V(s,50), emp p_succ of policy actions)",hammer,,360,,,0.6921639527089298
+"STATE-LEVEL spearman(FRM(s), emp p_succ of policy actions)",hammer,,360,,,0.5561617046233114
+"FACR Q_cf (learned dyn ensemble, V horizon 49)",peg,0.003777750156539734,360,5,0.6,0.30980747935083996
+"V(true simulator next state, 49) = success-value baseline w/ perfect dynamics",peg,0.010686450830494382,360,5,0.6,0.41895405969409455
+FRM reward of true next state (geometric proximity),peg,0.028192895806762465,360,5,0.6,0.12304062733028902
+state-only V(s) (constant over actions; cannot rank actions),peg,-1.9266474005441805e-18,360,3,0.6,nan
+"STATE-LEVEL spearman(V(s,50), emp p_succ of policy actions)",peg,,360,,,0.6714802899791673
+"STATE-LEVEL spearman(FRM(s), emp p_succ of policy actions)",peg,,360,,,0.18739166435588753

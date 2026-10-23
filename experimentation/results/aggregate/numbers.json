@@ -1,0 +1,44 @@
+{
+ "gap_G": {
+  "psvm_oracle|button_press": 1.333333333333333,
+  "psvm_oracle|hammer": 1.0,
+  "outcome_sparse|button_press": 1.6666666666666665,
+  "outcome_sparse|hammer": 1.6666666666666665,
+  "psvm_noRRM|button_press": -0.33333333333333337,
+  "psvm_noRRM|hammer": 0.33333333333333337,
+  "facr_progress|button_press": -0.33333333333333337,
+  "facr_progress|hammer": 0.33333333333333337,
+  "facr_value|button_press": 0.33333333333333337,
+  "facr_value|hammer": -0.33333333333333337,
+  "facr_facr|button_press": 0.6666666666666665,
+  "facr_facr|hammer": 0.33333333333333337,
+  "rrm_extra|button_press": 0.0,
+  "rrm_extra|hammer": -0.33333333333333337,
+  "rlf_onpolicy|button_press": 0.6666666666666665,
+  "rlf_onpolicy|hammer": 0.0,
+  "rlf_highreward|button_press": 1.0,
+  "rlf_highreward|hammer": 0.0,
+  "rlf_uncertainty|button_press": 1.0,
+  "rlf_uncertainty|hammer": 0.0,
+  "rlf_attack|button_press": 1.0,
+  "rlf_attack|hammer": -0.33333333333333337,
+  "rlf_hybrid|button_press": 1.6666666666666665,
+  "rlf_hybrid|hammer": -0.33333333333333337,
+  "rlf_random|button_press": 0.6666666666666665,
+  "rlf_random|hammer": -0.33333333333333337,
+  "rlf_disagreement|button_press": 1.6666666666666665,
+  "rlf_disagreement|hammer": -0.33333333333333337
+ },
+ "baselines": {
+  "rrm": {
+   "button_press": 16.666666666666668,
+   "hammer": 16.666666666666668,
+   "peg_insert": 0.0
+  },
+  "core": {
+   "button_press": 66.66666666666667,
+   "hammer": 66.66666666666667,
+   "peg_insert": 0.0
+  }
+ }
+}

@@ -1,0 +1,7 @@
+predictor,task,advantage_pearson,n_states,n_states_discriminable,top1_ok,within_state_spearman
+"FACR Q_cf (learned dyn ensemble, V horizon 49)",peg,0.003777750156539734,360,5,0.6,0.30980747935083996
+"V(true simulator next state, 49) = success-value baseline w/ perfect dynamics",peg,0.010686450830494382,360,5,0.6,0.41895405969409455
+FRM reward of true next state (geometric proximity),peg,0.028192895806762465,360,5,0.6,0.12304062733028902
+state-only V(s) (constant over actions; cannot rank actions),peg,-1.9266474005441805e-18,360,3,0.6,nan
+"STATE-LEVEL spearman(V(s,50), emp p_succ of policy actions)",peg,,360,,,0.6714802899791673
+"STATE-LEVEL spearman(FRM(s), emp p_succ of policy actions)",peg,,360,,,0.18739166435588753
