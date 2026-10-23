@@ -1,0 +1,25 @@
+{
+ "time": "2026-10-23 16:00:47 PDT",
+ "deleted_path": "/home/colligo/working/manaswi/experimentation",
+ "deleted": true,
+ "path_exists_after": false,
+ "preconditions": {
+  "canonical_path_matched": true,
+  "was_symlink": false,
+  "project_processes_running": 0,
+  "hf_verification": "3492/3492 files verified by size+hash, 0 missing, 0 mismatches, 40-file download sample OK (revision 0ff0d495d9fba4f5049e8a3673c84b67fd5cd68f)",
+  "github_final_commit": "f28153bb55b70404fb065770cd733c5203da32a4"
+ },
+ "sibling_integrity": {
+  "path": "/home/colligo/working/manaswi/DATASET_GENERATION",
+  "entries_before": 686324,
+  "entries_after": 686324,
+  "listing_md5_before": "3fc18ed486cf66725619abca7bff6a7a",
+  "listing_md5_after": "3fc18ed486cf66725619abca7bff6a7a",
+  "intact": true
+ },
+ "not_transferred": [
+  "upstream/CoRe clone (pinned, reproducible)",
+  ".venv/.venv_report/cache/tmp (regenerable)"
+ ]
+}
