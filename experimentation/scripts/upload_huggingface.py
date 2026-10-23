@@ -27,8 +27,7 @@ ap.add_argument("--env-file", default="/home/colligo/DatasetDiscovery/.env")
 ap.add_argument("--what", nargs="+", default=["small", "runs"])
 args = ap.parse_args()
 api = HfApi(token=token(args.env_file))
-SMALL = ["reports", "results", "figures", "configs", "logs", "scripts", "src", "tests", "jobs_stage0.txt", "jobs_stage1.txt", "jobs_stage2.txt",
-         "jobs_stage3.txt", "README.md", "environment.yml", "requirements.lock", "run_all.sh", "reproduce.sh", "patches", "manifests"]
+SMALL = ["reports", "results", "figures", "configs", "logs", "scripts", "src", "tests"] + sorted(p.name for p in ROOT.glob("jobs_*.txt")) + ["README.md", "environment.yml", "requirements.lock", "run_all.sh", "reproduce.sh", "patches", "manifests"]
 IGN = ["*/__pycache__/*", "*.pyc"]
 if "small" in args.what:
     for item in SMALL:

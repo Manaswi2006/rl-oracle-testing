@@ -1,0 +1,163 @@
+{
+ "generated": "2026-10-23 15:59:54 PDT",
+ "server_workspace": "/home/colligo/working/manaswi/experimentation",
+ "github": {
+  "repo": "https://github.com/Manaswi2006/rl-oracle-testing",
+  "branch": "main",
+  "code_commit": "86276e64eca46f249d5a8fdada79c7490db631d7",
+  "folder": "experimentation/",
+  "note": "code_commit = commit that contains all code/configs/tests/results/report used here; a later commit adds this manifest, the commit-stamped MASTER_RESULTS.csv and the cleanup record"
+ },
+ "huggingface": {
+  "repo": "https://huggingface.co/datasets/Manaswi2006/RL_project",
+  "folder": "core_extensions_2026/",
+  "data_revision": "0ff0d495d9fba4f5049e8a3673c84b67fd5cd68f",
+  "note": "revision at which the data upload was fully verified; the manifests and the final cleanup record are added by later commits"
+ },
+ "inventory": {
+  "n_files": 3490,
+  "total_bytes": 3128239602,
+  "per_top_level": {
+   "README.md": {
+    "files": 1,
+    "bytes": 2168
+   },
+   "__top__": {
+    "files": 5,
+    "bytes": 3814542
+   },
+   "configs": {
+    "files": 1,
+    "bytes": 1172
+   },
+   "environment.yml": {
+    "files": 1,
+    "bytes": 271
+   },
+   "figures": {
+    "files": 16,
+    "bytes": 1846822
+   },
+   "jobs_rerun2.txt": {
+    "files": 1,
+    "bytes": 860
+   },
+   "jobs_stage0.txt": {
+    "files": 1,
+    "bytes": 3030
+   },
+   "jobs_stage0_rerun.txt": {
+    "files": 1,
+    "bytes": 230
+   },
+   "jobs_stage1.txt": {
+    "files": 1,
+    "bytes": 4200
+   },
+   "jobs_stage2.txt": {
+    "files": 1,
+    "bytes": 8484
+   },
+   "jobs_stage3.txt": {
+    "files": 1,
+    "bytes": 10215
+   },
+   "jobs_stage4.txt": {
+    "files": 1,
+    "bytes": 1521
+   },
+   "jobs_stage5.txt": {
+    "files": 1,
+    "bytes": 2643
+   },
+   "logs": {
+    "files": 27,
+    "bytes": 131781
+   },
+   "patches": {
+    "files": 1,
+    "bytes": 53
+   },
+   "reports": {
+    "files": 15,
+    "bytes": 3885683
+   },
+   "reproduce.sh": {
+    "files": 1,
+    "bytes": 994
+   },
+   "requirements.lock": {
+    "files": 1,
+    "bytes": 1786
+   },
+   "results": {
+    "files": 44,
+    "bytes": 3705461
+   },
+   "run_all.sh": {
+    "files": 1,
+    "bytes": 946
+   },
+   "runs": {
+    "files": 3333,
+    "bytes": 3114652510
+   },
+   "scripts": {
+    "files": 16,
+    "bytes": 86697
+   },
+   "src": {
+    "files": 16,
+    "bytes": 69984
+   },
+   "tests": {
+    "files": 3,
+    "bytes": 7549
+   }
+  },
+  "file": "manifests/local_inventory.json (path, size, sha256)"
+ },
+ "verification": {
+  "method": "size + content hash per file (LFS sha256 or git blob id) against the HF tree listing, plus download-and-sha256 of a random sample",
+  "report": {
+   "revision": "0ff0d495d9fba4f5049e8a3673c84b67fd5cd68f",
+   "local_files": 3492,
+   "remote_files_under_prefix": 3497,
+   "verified_ok": 3492,
+   "missing": [],
+   "size_mismatch": [],
+   "hash_mismatch": [],
+   "download_sample": 40,
+   "download_sample_mismatch": [],
+   "local_bytes": 3128246857
+  }
+ },
+ "not_transferred": [
+  {
+   "path": "upstream/CoRe",
+   "reason": "third-party clone (68 MB), pinned commit d663cabc38e6d6f39ac5e1e4327d94f17f84fa59, no local modification; recreated by reproduce.sh"
+  },
+  {
+   "path": ".venv, .venv_report, cache/, tmp/",
+   "reason": "regenerable environments / caches / scratch; requirements.lock + reproduce.sh recreate them"
+  },
+  {
+   "path": "runs/**/vlm_label_set/",
+   "reason": "empty directories (no VLM labels exist; teacher labels are in preference_labels.npz)"
+  },
+  {
+   "path": "credentials",
+   "reason": "never stored in the workspace; HF token was read from /home/colligo/DatasetDiscovery/.env at upload time only"
+  }
+ ],
+ "cleanup": {
+  "planned_deletion": "/home/colligo/working/manaswi/experimentation (entire folder), only if verification above has zero missing / mismatching files",
+  "safety_checks": [
+   "canonical path must equal /home/colligo/working/manaswi/experimentation",
+   "must not be a symlink",
+   "parent /home/colligo/working/manaswi and sibling DATASET_GENERATION untouched",
+   "no project process running"
+  ],
+  "result": "recorded in CLEANUP_RESULT.json (uploaded to HF and GitHub after deletion)"
+ }
+}

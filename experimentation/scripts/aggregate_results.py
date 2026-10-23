@@ -18,6 +18,8 @@ TASK = {"metaworld_button-press-topdown-v2": "button_press", "metaworld_hammer-v
 
 
 def git_commit():
+    import os
+    if os.environ.get('GIT_COMMIT'): return os.environ['GIT_COMMIT']
     try:
         return subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], stderr=subprocess.DEVNULL).decode().strip()
     except Exception:
