@@ -1,0 +1,183 @@
+{
+ "generated": "2026-10-25 12:24:14 PDT",
+ "server_workspace": "/home/colligo/working/manaswi/experimentation",
+ "github": {
+  "repo": "https://github.com/Manaswi2006/rl-oracle-testing",
+  "branch": "main",
+  "code_commit": "36890aa27acca8391b4d51e3f49b5c16344d380e",
+  "folder": "experimentation/",
+  "note": "code_commit = commit that contains all code/configs/tests/results/report used here; a later commit adds this manifest, the commit-stamped MASTER_RESULTS.csv and the cleanup record"
+ },
+ "huggingface": {
+  "repo": "https://huggingface.co/datasets/Manaswi2006/RL_project",
+  "folder": "vlm_outcome_2026/",
+  "data_revision": "9422c56418067baaf561f88ed5e3de068a196115",
+  "note": "revision at which the data upload was fully verified; the manifests and the final cleanup record are added by later commits"
+ },
+ "inventory": {
+  "n_files": 2416,
+  "total_bytes": 2336571095,
+  "per_top_level": {
+   "README.md": {
+    "files": 1,
+    "bytes": 3040
+   },
+   "__top__": {
+    "files": 4,
+    "bytes": 1858484
+   },
+   "configs": {
+    "files": 1,
+    "bytes": 1172
+   },
+   "docs": {
+    "files": 1,
+    "bytes": 49873
+   },
+   "environment.yml": {
+    "files": 1,
+    "bytes": 271
+   },
+   "figures": {
+    "files": 19,
+    "bytes": 3114164
+   },
+   "jobs_stage0.txt": {
+    "files": 1,
+    "bytes": 3030
+   },
+   "jobs_stage0_rerun.txt": {
+    "files": 1,
+    "bytes": 230
+   },
+   "jobs_stage1.txt": {
+    "files": 1,
+    "bytes": 4200
+   },
+   "jobs_stage2.txt": {
+    "files": 1,
+    "bytes": 8484
+   },
+   "jobs_stage3.txt": {
+    "files": 1,
+    "bytes": 10215
+   },
+   "jobs_stage4.txt": {
+    "files": 1,
+    "bytes": 1521
+   },
+   "jobs_stage5.txt": {
+    "files": 1,
+    "bytes": 2643
+   },
+   "jobs_stage6.txt": {
+    "files": 1,
+    "bytes": 6996
+   },
+   "jobs_stage7.txt": {
+    "files": 1,
+    "bytes": 5172
+   },
+   "jobs_stage8.txt": {
+    "files": 1,
+    "bytes": 840
+   },
+   "jobs_stage8b.txt": {
+    "files": 1,
+    "bytes": 840
+   },
+   "logs": {
+    "files": 16,
+    "bytes": 6970281
+   },
+   "patches": {
+    "files": 1,
+    "bytes": 53
+   },
+   "reports": {
+    "files": 18,
+    "bytes": 5665062
+   },
+   "reproduce.sh": {
+    "files": 1,
+    "bytes": 994
+   },
+   "requirements.lock": {
+    "files": 1,
+    "bytes": 1786
+   },
+   "results": {
+    "files": 50,
+    "bytes": 1279222558
+   },
+   "run_all.sh": {
+    "files": 1,
+    "bytes": 946
+   },
+   "runs": {
+    "files": 2235,
+    "bytes": 1039404869
+   },
+   "scripts": {
+    "files": 30,
+    "bytes": 135668
+   },
+   "src": {
+    "files": 20,
+    "bytes": 86743
+   },
+   "tests": {
+    "files": 5,
+    "bytes": 10960
+   }
+  },
+  "file": "manifests/local_inventory_vlm.json (path, size, sha256)"
+ },
+ "verification": {
+  "method": "size + content hash per file (LFS sha256 or git blob id) against the HF tree listing, plus download-and-sha256 of a random sample",
+  "report": {
+   "revision": "9422c56418067baaf561f88ed5e3de068a196115",
+   "local_files": 2416,
+   "remote_files_under_prefix": 2420,
+   "verified_ok": 2416,
+   "missing": [],
+   "size_mismatch": [],
+   "hash_mismatch": [],
+   "download_sample": 40,
+   "download_sample_mismatch": [],
+   "local_bytes": 2336571099
+  }
+ },
+ "not_transferred": [
+  {
+   "path": "upstream/CoRe",
+   "reason": "third-party clone (68 MB), pinned commit d663cabc38e6d6f39ac5e1e4327d94f17f84fa59, no local modification; recreated by reproduce.sh"
+  },
+  {
+   "path": "cache/ (24 GB: Qwen/Qwen3-VL-8B-Instruct weights, uv/HF caches)",
+   "reason": "public model weights, re-downloadable from Hugging Face (Qwen/Qwen3-VL-8B-Instruct, Apache-2.0)"
+  },
+  {
+   "path": ".venv, .venv_vlm, .venv_report, tmp/",
+   "reason": "regenerable environments / scratch; requirements.lock + reproduce.sh recreate them"
+  },
+  {
+   "path": "checkpoints/actors, checkpoints/hf_actors",
+   "reason": "copies of actors already stored in the same HF dataset under core_extensions_2026/runs/**/actor.pt"
+  },
+  {
+   "path": "credentials",
+   "reason": "never stored in the workspace; the HF token was read from /home/colligo/DatasetDiscovery/.env at upload time only"
+  }
+ ],
+ "cleanup": {
+  "planned_deletion": "/home/colligo/working/manaswi/experimentation (entire folder), only if verification above has zero missing / mismatching files",
+  "safety_checks": [
+   "canonical path must equal /home/colligo/working/manaswi/experimentation",
+   "must not be a symlink",
+   "parent /home/colligo/working/manaswi and sibling DATASET_GENERATION untouched",
+   "no project process running"
+  ],
+  "result": "recorded in CLEANUP_RESULT_VLM.json (uploaded to HF and GitHub after deletion)"
+ }
+}

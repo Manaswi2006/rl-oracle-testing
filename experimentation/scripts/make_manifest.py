@@ -10,7 +10,7 @@ from verify_transfer import local_files, sha256   # noqa
 
 ap = argparse.ArgumentParser(); ap.add_argument("--github-commit", required=True); ap.add_argument("--hf-revision", required=True); ap.add_argument("--verify-report", default=str(ROOT / "tmp/verify_report.json")); ap.add_argument("--suffix", default=""); ap.add_argument("--prefix", default="core_extensions_2026"); ap.add_argument("--inventory-name", default="local_inventory.json")
 a = ap.parse_args()
-loc = {k: v for k, v in local_files().items() if not "TRANSFER_AND_CLEANUP_MANIFEST" not in k and not k.startswith("manifests/")}
+loc = {k: v for k, v in local_files().items() if "TRANSFER_AND_CLEANUP_MANIFEST" not in k and not k.startswith("manifests/")}
 items = sorted(loc.items())
 with ThreadPoolExecutor(16) as ex:
     hs = list(ex.map(lambda kv: sha256(kv[1]), items))
