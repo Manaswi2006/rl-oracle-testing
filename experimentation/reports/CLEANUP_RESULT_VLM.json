@@ -1,0 +1,31 @@
+{
+ "time": "2026-10-25 12:25:42 PDT",
+ "study": "VLM-outcome study (Part 2)",
+ "deleted_path": "/home/colligo/working/manaswi/experimentation",
+ "deleted": true,
+ "path_exists_after": false,
+ "preconditions": {
+  "canonical_path_matched": true,
+  "was_symlink": false,
+  "project_processes_running": 0,
+  "vllm_server_stopped": true,
+  "hf_verification": "2416/2416 files verified by size+hash (folder vlm_outcome_2026/, revision 9422c56418067baaf561f88ed5e3de068a196115); 40-file download sample OK; manifests and key reports re-downloaded and matched",
+  "github_code_commit": "36890aa27acca8391b4d51e3f49b5c16344d380e",
+  "github_manifest_commit": "fe34f61f8f7ed9777f1327f3466c2a0b75d245a9"
+ },
+ "sibling_integrity": {
+  "path": "/home/colligo/working/manaswi/DATASET_GENERATION",
+  "entries_before_deletion": 686334,
+  "entries_after": 686334,
+  "listing_md5_before": "2b368819ff76e08fd00c19d7a9263e72",
+  "listing_md5_after": "2b368819ff76e08fd00c19d7a9263e72",
+  "intact": true,
+  "note": "the entry count differs from the Part 1 cleanup record (686324 -> 686334): another process changed DATASET_GENERATION between the two studies; this study never wrote there. Before/after values for this deletion are identical."
+ },
+ "not_transferred": [
+  "upstream/CoRe clone (pinned, reproducible)",
+  "model weights cache (Qwen/Qwen3-VL-8B-Instruct, public)",
+  ".venv/.venv_vlm/.venv_report/tmp (regenerable)",
+  "checkpoints/actors copies (already on HF under core_extensions_2026)"
+ ]
+}
