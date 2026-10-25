@@ -1,0 +1,106 @@
+{
+ "button|cot_all16": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.875,
+  "recall": 0.8625,
+  "specificity": 0.8875,
+  "balanced_acc": 0.875,
+  "secs": 19.9,
+  "examples": [
+   " last frame, the button is completely depressed, lying flat on the yellow surface with no visible stem or attachment, indicating full compression.\n\nVERDICT: Yes",
+   " black stem. In the last frame, the red button is fully depressed, flush with the yellow surface of the base, indicating complete downward motion.\n\nVERDICT: Yes"
+  ]
+ },
+ "button|cot_last8": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.85625,
+  "recall": 0.9125,
+  "specificity": 0.8,
+  "balanced_acc": 0.85625,
+  "secs": 11.6,
+  "examples": [
+   " to the yellow base by a black stem. In the last frame, the button is completely depressed, lying flat on the yellow surface with no visible stem.\n\nVERDICT: Yes",
+   "tial, unpressed state. In the last frame, the button is fully depressed, sitting flush with the yellow surface, indicating the action is complete.\n\nVERDICT: Yes"
+  ]
+ },
+ "button|cot_first_last": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.5,
+  "recall": 1.0,
+  "specificity": 0.0,
+  "balanced_acc": 0.5,
+  "secs": 5.9,
+  "examples": [
+   " In the last frame, the button has been pressed down, lying flat on the yellow surface. The instruction has been completely carried out by the end. VERDICT: Yes",
+   "e, the button has been pressed down, sitting flush with the yellow surface of the base. The instruction has been completely carried out by the end. VERDICT: Yes"
+  ]
+ },
+ "button|cot_first_last4": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.925,
+  "recall": 0.9375,
+  "specificity": 0.9125,
+  "balanced_acc": 0.925,
+  "secs": 8.4,
+  "examples": [
+   "tached to the yellow base by a black stem. In the last frame, the button is fully depressed, lying flat on the yellow surface with no visible stem. VERDICT: Yes",
+   "rame, the button is fully depressed, sitting flush with the yellow surface of the base. The instruction has been completely carried out by the end. VERDICT: Yes"
+  ]
+ },
+ "hammer|cot_all16": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.7125,
+  "recall": 0.65,
+  "specificity": 0.775,
+  "balanced_acc": 0.7125,
+  "secs": 23.1,
+  "examples": [
+   "ooden surface. In the last frame, the hammer is resting on the floor, and the nail is fully embedded in the wood, indicating the task is complete.\n\nVERDICT: Yes",
+   "In the last frame, the hammer is resting on the wood, and the nail is still visibly protruding from the surface, indicating the task is incomplete.\n\nVERDICT: No"
+  ]
+ },
+ "hammer|cot_last8": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.63125,
+  "recall": 0.3375,
+  "specificity": 0.925,
+  "balanced_acc": 0.6312500000000001,
+  "secs": 13.8,
+  "examples": [
+   "e. In the last frame, the nail is fully embedded in the wood, and the hammer is resting on the surface beside it, indicating the task is complete.\n\nVERDICT: Yes",
+   "e wooden surface. In the last frame, the hammer lies on the wood, and the nail is still only partially embedded, indicating the task is incomplete.\n\nVERDICT: No"
+  ]
+ },
+ "hammer|cot_first_last": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.59375,
+  "recall": 0.275,
+  "specificity": 0.9125,
+  "balanced_acc": 0.59375,
+  "secs": 7.2,
+  "examples": [
+   " floor. In the last frame, the red hammer is positioned directly over the nail, indicating it has been used to drive the nail further into the wood. VERDICT: No",
+   ", with a red hammer lying nearby. In the last frame, the red hammer is positioned over the nail, indicating it has been used to drive it further in. VERDICT: No"
+  ]
+ },
+ "hammer|cot_first_last4": {
+  "n": 160,
+  "prevalence": 0.5,
+  "acc": 0.69375,
+  "recall": 0.45,
+  "specificity": 0.9375,
+  "balanced_acc": 0.69375,
+  "secs": 10.8,
+  "examples": [
+   "en block. In the last frame, the hammer is resting on the floor, and the nail is fully embedded in the wood, with no part visible above the block.\n\nVERDICT: Yes",
+   "e wooden surface. In the last frame, the hammer lies on the wood, and the nail is still only partially embedded, indicating the task is incomplete.\n\nVERDICT: No"
+  ]
+ }
+}

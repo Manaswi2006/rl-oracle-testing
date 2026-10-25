@@ -117,6 +117,8 @@ class Runner:
             self.rlf = RLFModule(self, cfg)
         if self.ext is not None and hasattr(self.ext, "bind"):
             self.ext.bind(self.agent)
+        if self.ext is not None and hasattr(self.ext, "bind_runner"):
+            self.ext.bind_runner(self)
         self.alpha = 0.0
         self.step = 0
         self.total_feedback = 0
@@ -264,6 +266,8 @@ class Runner:
                 if "drawer" in cfg.env or "sweep" in cfg.env:
                     rgb = rgb[100:400, 100:400, :]
                 import cv2
+                if getattr(self.ext, "wants_frames", False):
+                    self.ext.on_frame(ep_t, rgb)
                 img = cv2.resize(rgb, (self.S, self.S))
 
             # ---- reward assembly -----------------------------------------
@@ -277,7 +281,7 @@ class Runner:
                     r_frm = float(np.clip(self.FRM(next_obs, action, goal)[0], -1, 1))
                 elif self.method == "ext":
                     if getattr(self.ext, "static_reward", False):
-                        r_frm = float(self.ext.step_reward(success))
+                        r_frm = float(self.ext.step_reward(success, next_obs))
                     else:
                         r_frm = float(np.clip(self.ext.reward_batch(obs[None], action[None], next_obs[None])[0], -1, 1))
                 if self.step >= pre_end:

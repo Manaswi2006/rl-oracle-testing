@@ -9,7 +9,8 @@ from pathlib import Path
 from huggingface_hub import HfApi
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO, PREFIX = "Manaswi2006/RL_project", "core_extensions_2026"
+REPO, PREFIX = "Manaswi2006/RL_project", os.environ.get("HF_PREFIX", "core_extensions_2026")
+TOP = [t for t in os.environ.get("HF_TOP", "").split(";") if t]    # extra top-level copies (relative paths), e.g. reports/VLM_OUTCOME_REPORT.md
 
 
 def token(env_file):
@@ -27,7 +28,7 @@ ap.add_argument("--env-file", default="/home/colligo/DatasetDiscovery/.env")
 ap.add_argument("--what", nargs="+", default=["small", "runs"])
 args = ap.parse_args()
 api = HfApi(token=token(args.env_file))
-SMALL = ["reports", "results", "figures", "configs", "logs", "scripts", "src", "tests"] + sorted(p.name for p in ROOT.glob("jobs_*.txt")) + ["README.md", "environment.yml", "requirements.lock", "run_all.sh", "reproduce.sh", "patches", "manifests"]
+SMALL = ["reports", "results", "figures", "configs", "logs", "scripts", "src", "tests", "docs"] + sorted(p.name for p in ROOT.glob("jobs_*.txt")) + ["README.md", "environment.yml", "requirements.lock", "run_all.sh", "reproduce.sh", "patches", "manifests"]
 IGN = ["*/__pycache__/*", "*.pyc"]
 if "small" in args.what:
     for item in SMALL:
@@ -39,13 +40,14 @@ if "small" in args.what:
             api.upload_file(repo_id=REPO, repo_type="dataset", path_or_fileobj=str(p), path_in_repo=f"{PREFIX}/{item}",
                             commit_message=f"core_extensions_2026: {item}")
         print("uploaded", item, flush=True)
-    # mandatory top-level report copies
-    for f in ["FINAL_RESEARCH_REPORT.md", "FINAL_RESEARCH_REPORT.pdf", "MASTER_RESULTS.csv", "RESEARCH_DECISION.json", "REPRODUCIBILITY.md",
-              "TRANSFER_AND_CLEANUP_MANIFEST.md", "TRANSFER_AND_CLEANUP_MANIFEST.json"]:
-        p = ROOT / "reports" / f
+    # top-level copies of the key deliverables
+    tops = [f"reports/{f}" for f in ["FINAL_RESEARCH_REPORT.md", "FINAL_RESEARCH_REPORT.pdf", "MASTER_RESULTS.csv", "RESEARCH_DECISION.json", "REPRODUCIBILITY.md",
+                                      "TRANSFER_AND_CLEANUP_MANIFEST.md", "TRANSFER_AND_CLEANUP_MANIFEST.json"]] if not TOP else TOP
+    for rel in tops:
+        p = ROOT / rel
         if p.exists():
-            api.upload_file(repo_id=REPO, repo_type="dataset", path_or_fileobj=str(p), path_in_repo=f"{PREFIX}/{f}", commit_message=f"core_extensions_2026: {f}")
-            print("uploaded top-level", f, flush=True)
+            api.upload_file(repo_id=REPO, repo_type="dataset", path_or_fileobj=str(p), path_in_repo=f"{PREFIX}/{p.name}", commit_message=f"{PREFIX}: {p.name}")
+            print("uploaded top-level", p.name, flush=True)
 if "runs" in args.what:
     for sm in sorted((ROOT / "runs").glob("*/*")):
         if not sm.is_dir():

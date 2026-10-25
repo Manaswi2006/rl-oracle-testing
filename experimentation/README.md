@@ -29,3 +29,10 @@ bash reproduce.sh            # env + upstream clone + unit tests + smoke test
 python scripts/gen_jobs.py stage0 > jobs_stage0.txt && python scripts/run_queue.py jobs_stage0.txt --concurrency 8 --gpus 0
 python scripts/aggregate_results.py && python scripts/make_figures.py
 ```
+
+## Part 2: VLM-outcome study (follow-up)
+Can a small open-weight VLM (Qwen3-VL-8B, served locally with vLLM) replace the privileged success signal? See `reports/VLM_OUTCOME_REPORT.md` (results), `docs/SESSION_SUMMARY.md` (everything tried, what works and what does not, recommended direction) and `src/vlm/`, `scripts/vlm/` (code). Job lists: `jobs_stage6.txt` (VLM verdict arms), `jobs_stage7.txt` (exploration bonus), `jobs_stage8*.txt` (false-positive diagnostics). Start the VLM server first:
+```bash
+VLLM_USE_FLASHINFER_SAMPLER=0 CUDA_VISIBLE_DEVICES=0 .venv_vlm/bin/vllm serve Qwen/Qwen3-VL-8B-Instruct --served-model-name qwen3vl8b --port 8000 --max-model-len 20000 --limit-mm-per-prompt '{"image":28,"video":0}'
+python scripts/run_queue.py jobs_stage6.txt --concurrency 48 --gpus 1,2,3,4,5,6,7   # training jobs render on their own GPU (MUJOCO_EGL_DEVICE_ID)
+```

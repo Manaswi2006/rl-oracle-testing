@@ -66,6 +66,7 @@ while pending or running:
         rd.mkdir(parents=True, exist_ok=True)
         f = open(rd / "stdout.log", "a")
         env = dict(env0, CUDA_VISIBLE_DEVICES=least_loaded_gpu(gpus, [j[0].gpu for j in running if hasattr(j[0], 'gpu')])); gi += 1
+        env['MUJOCO_EGL_DEVICE_ID'] = env['CUDA_VISIBLE_DEVICES']   # render contexts on the job's GPU (default is EGL device 0 for every process!)
         if args.mps:
             env.update(CUDA_MPS_PIPE_DIRECTORY=str(ROOT / 'tmp/mps_pipe'), CUDA_MPS_LOG_DIRECTORY=str(ROOT / 'tmp/mps_log'))
         p = subprocess.Popen([py, "-m", args.module, f"run_dir={rd}", f"run_id={rd.name}"] + job[1:], cwd=ROOT, env=env, stdout=f, stderr=subprocess.STDOUT)

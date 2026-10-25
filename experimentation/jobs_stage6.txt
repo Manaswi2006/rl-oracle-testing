@@ -1,0 +1,48 @@
+runs/stage6/ep_oracle/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle
+runs/stage6/ep_vlm_major/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority
+runs/stage6/ep_vlm_soft/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=soft
+runs/stage6/ep_oracle_noRRM/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle reward_alpha=0.0
+runs/stage6/ep_vlm_noRRM/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority reward_alpha=0.0
+runs/stage6/ep_oracle_noRRM/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle reward_alpha=0.0
+runs/stage6/ep_vlm_noRRM/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority reward_alpha=0.0
+runs/stage6/ep_oracle_noRRM/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle reward_alpha=0.0
+runs/stage6/ep_vlm_noRRM/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority reward_alpha=0.0
+runs/stage6/ep_oracle_noRRM/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle reward_alpha=0.0
+runs/stage6/ep_vlm_noRRM/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority reward_alpha=0.0
+runs/stage6/ep_oracle_noRRM/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle reward_alpha=0.0
+runs/stage6/ep_vlm_noRRM/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority reward_alpha=0.0
+runs/stage6/ep_oracle_noRRM/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=oracle reward_alpha=0.0
+runs/stage6/ep_vlm_noRRM/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority reward_alpha=0.0

@@ -1,0 +1,38 @@
+{
+ "button|direct": {
+  "n": 160,
+  "acc_order1": 0.5,
+  "acc_order2": 0.5,
+  "frac_order_consistent": 0.0,
+  "acc_when_consistent": null,
+  "P_choose_first_position": 0.0,
+  "secs": 23.7
+ },
+ "button|cot": {
+  "n": 160,
+  "acc_order1": 0.425,
+  "acc_order2": 0.4625,
+  "frac_order_consistent": 0.3,
+  "acc_when_consistent": 0.3125,
+  "P_choose_first_position": 0.3,
+  "secs": 11.2
+ },
+ "hammer|direct": {
+  "n": 160,
+  "acc_order1": 0.49375,
+  "acc_order2": 0.5125,
+  "frac_order_consistent": 0.00625,
+  "acc_when_consistent": 1.0,
+  "P_choose_first_position": 0.00625,
+  "secs": 25.0
+ },
+ "hammer|cot": {
+  "n": 160,
+  "acc_order1": 0.50625,
+  "acc_order2": 0.54375,
+  "frac_order_consistent": 0.275,
+  "acc_when_consistent": 0.5909090909090909,
+  "P_choose_first_position": 0.18125,
+  "secs": 13.7
+ }
+}

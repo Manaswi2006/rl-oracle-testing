@@ -1,0 +1,4 @@
+runs/stage8/fp_diag/hammer_s10 env=metaworld_hammer-v2 seed=10 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority num_train_steps=70000 num_final_eval_episodes=10 diag_episodes=0
+runs/stage8/fp_diag/button_s10 env=metaworld_button-press-topdown-v2 seed=10 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority num_train_steps=70000 num_final_eval_episodes=10 diag_episodes=0
+runs/stage8/fp_diag/hammer_s11 env=metaworld_hammer-v2 seed=11 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority num_train_steps=70000 num_final_eval_episodes=10 diag_episodes=0
+runs/stage8/fp_diag/button_s11 env=metaworld_button-press-topdown-v2 seed=11 method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority num_train_steps=70000 num_final_eval_episodes=10 diag_episodes=0

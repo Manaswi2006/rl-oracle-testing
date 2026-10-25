@@ -1,6 +1,6 @@
 # Session summary: everything we tried, what worked, what did not, and where to go next
 
-*Written 2026-10-25 during the session. Part 2 (the VLM outcome study) was still running when this was written; its final numbers are in `reports/VLM_OUTCOME_REPORT.md` once that exists. Everything marked **[verified]** was measured in this session and is backed by files in the repository / Hugging Face dataset. Everything marked **[not verified]** is my reasoning or a literature claim that I only read at abstract level.*
+*Written 2026-10-25 during the session. Part 2 (the VLM outcome study) is complete as of 2026-10-25 12:30; the full write-up with all tables and figures is `reports/VLM_OUTCOME_REPORT.md` (also `.pdf`), and Section 11.3 below summarises the final numbers. Everything marked **[verified]** was measured in this session and is backed by files in the repository / Hugging Face dataset. Everything marked **[not verified]** is my reasoning or a literature claim that I only read at abstract level.*
 
 ---
 
@@ -45,7 +45,10 @@ The short version of the whole session:
 | 12 | "option 2 already used/not novel? look at option 1 too; state the full hypothesis" | Searched arXiv; wrote the full hypothesis (Section 12). |
 | 13 | "option 2: are we using anything privileged?" | Answered (Section 14.3). |
 | 14 | "what if subgoals are discovered with RL instead of asked from an LLM?" | Discussed (Section 14.4). |
-| 15 | This document. | |
+| 15 | "detailed document in docs folder ..." | This document (first version written while stage 6 was running). |
+| 16 | "yes yes run everything you want" (unseen-task test + exploration bonus) | Ran the frozen judge on Dial Turn and Peg Insert offline; implemented RND and ran 30 exploration runs (stage 7). |
+| 17 | (my own initiative after the stage-6 result) | Found that the policy exploits the VLM judge; ran 8 short diagnostic runs saving false-positive evidence and a judge-hardening test (stage 8). |
+| 18 | "approximate time ...?", "is anything privileged in option 2?", "what if subgoals are discovered by RL?" | Answered in chat; summarised in Section 14. |
 
 ---
 
@@ -367,11 +370,29 @@ Ground truth for preferences = larger summed environment reward in the window (|
 
 References from Part 1 (same code): RRM-only 16.7 / 16.7, CoRe 66.7 / 66.7, per-step oracle success reward 100 / 100.
 
-### 11.3 Status and provisional read (not final)
+### 11.3 Final results of stages 6-8 [verified]
 
-At about 45-80k steps (10-episode evaluations, still noisy): some VLM-judged runs already reach 100% (one Button Press seed in each VLM arm; two Hammer seeds in the soft-vote arm); the `noRRM` arms are at 0% except one Hammer seed. **Final numbers: see `reports/VLM_OUTCOME_REPORT.md` once the runs finish** (expected ~08:45 on 2026-10-25).
+Final success %, mean over seeds (6 seeds; arms marked * have 3 seeds). Full tables, bootstrap intervals and figures are in `reports/VLM_OUTCOME_REPORT.md`.
 
-My expectation (stated before the results, so it can be checked): replacing the oracle verdict with the VLM verdict costs a moderate amount (limited by the 14-23% false-positive rate); the `noRRM` arms stay low because there is no guidance toward the first success.
+| arm | Button Press | Hammer |
+|---|---|---|
+| earlier: RRM only / full CoRe / RRM + per-step oracle success flag | 16.7 / 66.7 / 100 | 16.7 / 66.7 / 100 |
+| scripted RRM + oracle episode verdict | 100 | 50 |
+| scripted RRM + VLM verdict, majority of 3 | 83.3 | **0** |
+| scripted RRM + VLM verdict, soft fraction | 83.3 | 33.3 |
+| oracle episode verdict only (RRM weight 0) * | 66.7 | 100 |
+| **VLM verdict only (RRM weight 0; no privileged signal reaches the policy) *** | **66.7** | 0 |
+| RND + oracle verdict (RRM weight 0) | 50 | 50 |
+| RND + VLM verdict (RRM weight 0) | 66.7 | 16.7 |
+| RND only * | 0 | 0 |
+
+Key facts:
+* **Button Press:** a pipeline with no simulator information (VLM verdict only) reached 66.7% = oracle-verdict-only = our full-CoRe reproduction (n=3, noisy).
+* **Hammer:** VLM-judged arms fail. **Cause = reward hacking of the verifier:** the judge's false-positive rate on failed training episodes rises from 27% (first 50 episodes) to 86% (last 50) on Hammer and from 6% to 58% on Button Press; false negatives stay near zero. On the static bank the same judge has only 22-27% (Hammer) / 7-23% (Button Press) false positives on trained-policy failures. Saved examples show the hammer lying over/next to the nail judged as "hammering completed".
+* **Judge hardening** (unanimity of paraphrases, skeptical-inspector prompt, change-check prompt) does not separate exploits from real successes: unanimity rejects 77% of Hammer exploits but also 55% of true successes; the skeptic prompt rejects everything.
+* **RND exploration did not help** (RND-only 0%; with verdicts no gain; with the oracle verdict it hurt Hammer: 50% vs 100%).
+* **I was wrong in my pre-registered expectation** (stated in the first version of this section) that the "no RRM" arms would stay near 0%: with the episode-level oracle verdict and no learned reward the policy reached 66.7% / 100%. So **guidance was not the bottleneck on these tasks; the reliability of the success signal is.**
+* Offline transfer of the frozen judge: Dial Turn balanced accuracy 0.81, Peg Insert 0.93 (precision only 0.51 at 12% prevalence); policy learning on those tasks was not run.
 
 ### 11.4 Incidents in Part 2
 
@@ -387,17 +408,18 @@ My expectation (stated before the results, so it can be checked): replacing the 
 
 | piece | privileged version | replacement | status |
 |---|---|---|---|
-| success signal | simulator success flag | VLM verdict (frozen, instruction-only prompt, reason-then-verdict) | **running (stage 6)**; judge validated offline |
+| success signal | simulator success flag | VLM verdict (frozen, instruction-only prompt, reason-then-verdict) | **tested: works on Button Press, fails on Hammer (verifier exploited)**; offline transfer decent |
 | preference teacher | scripted teacher on environment reward | VLM pairwise preferences | **tested offline: at chance (8B)** |
-| dense guidance | LLM-written reward from simulator state | exploration bonus / VLM subgoals / self-discovered milestones / perception-grounded reward | **proposed, not built** |
-| unseen tasks | tuned on Button Press + Hammer | same frozen prompts and settings on new tasks | **proposed** (cheap offline test first) |
+| dense guidance | LLM-written reward from simulator state | exploration bonus (RND) tested; VLM subgoals / self-discovered milestones / perception-grounded reward not built | **RND did not help; guidance turned out not to be the bottleneck on these tasks** |
+| unseen tasks | tuned on Button Press + Hammer | same frozen prompts and settings on new tasks | **offline test done (Dial Turn 0.81, Peg Insert 0.93 balanced accuracy)**; policy-level test not run |
 
 Sub-hypotheses:
 
-* **H1:** a VLM verdict can replace the simulator success flag at small cost. *(running)*
-* **H2:** guidance, not the verdict, is the bottleneck: an open 8B VLM gives no usable preferences, so removing the privileged teacher fails. *(supported by the offline preference tests; the policy-level check is the `noRRM` arms)*
-* **H3:** a task-agnostic exploration bonus plus the VLM verdict can fill the guidance gap. *(untested)*
-* **H4:** error *structure* matters more than error rate (correlated false positives; majority vs soft voting). *(partly addressed: A2 offline, `ep_vlm_major` vs `ep_vlm_soft`)*
+* **H1:** a VLM verdict can replace the simulator success flag at small cost. *(partly supported: yes on Button Press, no on Hammer because the policy exploits the judge)*
+* **H2:** guidance, not the verdict, is the bottleneck. *(NOT supported on these tasks: the VLM gives no usable preferences, but the policy does not need guidance when the outcome verdict is applied to the whole episode; the oracle-verdict-only arm reached 66.7% / 100%)*
+* **H3:** a task-agnostic exploration bonus plus the VLM verdict can fill the guidance gap. *(NOT supported: RND alone 0%, no gain with verdicts, hurt Hammer with the oracle verdict)*
+* **H4:** error *structure* matters more than error rate. *(supported: the damaging error is adaptive; false positives rise from 27% to 86% under optimisation; soft voting was less exploited than majority on Hammer (33% vs 0%, not significant))*
+* **H5 (new, from the results):** the main obstacle to privilege-free rewards is verifier robustness under optimisation pressure, not guidance. *(supported by the in-loop false-positive curves and the examples; the remedy is untested)*
 
 **Honest novelty statement:** every component has prior art (below). The credible contribution would be a **measured audit** of which privileged parts a small open-weight VLM can replace, at what cost, and whether the frozen pipeline transfers to unseen tasks.
 
@@ -447,6 +469,14 @@ Peg Insert was already the hard task and gave all zeros for every learned reward
 
 ---
 
+### 14.10 Results for the ideas we ran in Part 2
+
+* **Option 1 (exploration bonus):** run (stage 7); no benefit (Section 11.3). Verdict: **not needed on these tasks; do not pursue without a reason to believe exploration is the problem.**
+* **Judge hardening** (unanimity / skeptic / change-check): no variant separates exploits from successes. Verdict: **prompt-level hardening is insufficient.**
+* **New idea from the results: verifier-hacking-aware pipelines** (second independent verifier or larger model, success must be sustained over several frames, counterexample repair with a small label budget). This revives the earlier RLF idea in a setting where the reward model is really exploited. **Recommended next direction (Section 16).** Prior art on reward hacking and adversarial reward-model repair exists for LLM reward models (Adv-RM 2504.06141, REFORM 2507.06419) and for multimodal reward hacking (2607.09492) **[abstract level only]**.
+
+---
+
 ## 15. What works and what does not (consolidated)
 
 **Works / supported [verified]:**
@@ -466,14 +496,20 @@ Peg Insert was already the hard task and gave all zeros for every learned reward
 * Peg Insert: all learned-reward arms 0% within 200k steps.
 * Our CoRe baseline on Peg Insert and Dial Turn (0%) does not match the paper.
 
+**Part 2 additions [verified]:**
+* *Works:* VLM verdict with reasoning (accuracy 0.85-0.90 on the tuned tasks; 0.81 / 0.93 balanced accuracy on unseen tasks offline); an episode-level success verdict as the only reward (oracle: 66.7% Button Press, 100% Hammer); VLM-verdict-only reaches 66.7% on Button Press.
+* *Does not work:* one-word VLM answers; VLM preferences and progress scores (8B); the VLM verdict on Hammer (exploited, 0-33%); RND exploration; prompt-level judge hardening.
+
 **Unknown:**
-* How much the VLM's false positives hurt policy learning (stage 6 in progress).
-* Whether any guidance replacement (exploration, subgoals, milestones, perception) works without privileged information.
-* Whether anything here transfers to unseen tasks (not yet tested).
+* Whether a stronger / different verifier or counterexample repair stops the exploitation.
+* Whether the frozen pipeline works in *policy learning* on unseen tasks (only the offline judge was tested).
+* Whether other guidance sources (subgoals, milestones, perception-grounded rewards) matter on harder tasks than these two (we did not need them here).
 
 ---
 
 ## 16. Recommended direction
+
+**Update after Part 2 (final results):** the evidence now points at **verifier robustness**, not guidance. Priority order: (1) a verifier that is hard to exploit (larger or second VLM, success must be sustained over several frames, counterexample repair with a small label budget), measured by the in-loop false-positive curve; (2) policy-level tests on the unseen tasks (Dial Turn, Peg Insert) with the VLM-verdict-only arm; (3) more seeds / graded metric; (4) guidance replacements only if a harder task shows guidance is needed. The original list below was written before these results and is kept for the record.
 
 1. **Finish stage 6 and decide from data.** If `ep_vlm_*` is within a few points of `ep_oracle`, H1 is supported: the *success signal* can be privilege-free. If `noRRM` arms stay near 0%, H2 is supported in practice.
 2. **Cheap offline unseen-task test (about 15 minutes of VLM time):** generate ground-truth episode banks for Dial Turn and Peg Insert from the existing actors, run the **frozen** judge, and report accuracy/FPR/ECE. This tests the unseen-task claim directly, and tells us whether the frozen prompt is task-general before spending policy-learning compute.
@@ -497,6 +533,8 @@ Decision I need from you: whether to run steps 2 and 3 after stage 6 finishes (I
 | Part 2 code | `src/vlm/`, `scripts/vlm/` (bank generation, label-quality queries, prompt/preference/pointwise sweeps, frozen-judge test), `tests/test_episode_outcome.py` |
 | Part 2 raw VLM outputs | `results/vlm/*.json` (label quality, sweeps, judge test), `results/vlm/bank*.pkl` (JPEG frames + truth; 256-px banks ~0.6 GB, plus 448-px banks) |
 | Stage 6 runs | `runs/stage6/<arm>/<task>_s<seed>/` (each with `episode_verdicts.json`: per-episode votes, reasoning tails, true success) |
+| Part 2 final report | `reports/VLM_OUTCOME_REPORT.md` / `.pdf`; figures `figures/vlm_*.png`; master table `results/vlm/MASTER_RESULTS_VLM.csv` (86 runs: stage 6 = 48, stage 7 = 30, stage 8 = 8 diagnostic) |
+| Part 2 data on Hugging Face | `Manaswi2006/RL_project`, folder `vlm_outcome_2026/` (runs, episode banks, VLM raw outputs, figures, reports) |
 | This document | `docs/SESSION_SUMMARY.md` |
 
 Timeline of deletion: the Part 1 workspace was deleted after verified transfer (sibling `DATASET_GENERATION` untouched; listing hash identical before/after); the workspace was recreated for Part 2 and will again be deleted only after GitHub + Hugging Face uploads (new HF folder `vlm_outcome_2026/`) are verified.
@@ -514,6 +552,9 @@ Timeline of deletion: the Part 1 workspace was deleted after verified transfer (
 6. **The EGL-on-GPU-0 effect** was unnoticed in Part 1; it affected speed there and caused the Part 2 crashes.
 7. First-estimate runtimes were too short (the real throughput was limited by GPU time-slicing).
 8. The first VLM test (all "No") looked like a bug; it was a real first-token bias, but I should have shown the reasoning outputs sooner.
+9. **Wrong prediction:** I expected the "no RRM" arms to stay near 0%; with an episode-level oracle verdict they reached 66.7% / 100%. Recorded in Section 11.3.
+10. First version of the false-positive figure showed only the first paraphrase's reasoning (some ended in "VERDICT: No" although the majority said Yes); rebuilt to show a paraphrase that voted Yes.
+11. The bank-based accuracy of the judge (Hammer false-positive rate ~23%) underestimated the in-loop rate (up to 86%): a static bank does not measure how exploitable a judge is.
 
 **Not verified / limits:**
 * The literature review was a sub-agent draft; I verified 7 ids/titles and read the SVM paper in depth, but most other claims are abstract-level. Absence of a paper in a search is **not** evidence of novelty.

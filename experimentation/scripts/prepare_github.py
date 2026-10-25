@@ -6,8 +6,8 @@ from pathlib import Path
 SRC = Path(__file__).resolve().parents[1]
 DST = Path(sys.argv[1]) / "experimentation"
 FILES = ["README.md", "environment.yml", "requirements.lock", "run_all.sh", "reproduce.sh"] + [p.name for p in SRC.glob("jobs_stage*.txt")]
-DIRS = ["src", "scripts", "configs", "tests", "patches", "reports", "figures", "manifests", "results/aggregate", "results/psvm", "results/facr", "results/falsification"]
-EXCL = ["__pycache__", "*.pyc", "*.npz", "*.pt", ".env", "*.tmp", "old"]
+DIRS = ["src", "scripts", "configs", "tests", "patches", "reports", "figures", "manifests", "results/aggregate", "results/psvm", "results/facr", "results/falsification", "results/vlm", "docs"]
+EXCL = ["__pycache__", "*.pyc", "*.npz", "*.pt", "*.pkl", ".env", "*.tmp", "old"]
 SECRET = re.compile(r"(hf_[A-Za-z0-9]{20,}|gho_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9]{20,}|AZURE_API_KEY\s*=\s*\S+)")
 if DST.exists():
     shutil.rmtree(DST)

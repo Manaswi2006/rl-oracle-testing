@@ -11,10 +11,11 @@ from pathlib import Path
 from huggingface_hub import HfApi, hf_hub_download
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO, PREFIX = "Manaswi2006/RL_project", "core_extensions_2026"
-INC_DIRS = ["reports", "results", "figures", "configs", "logs", "scripts", "src", "tests", "runs", "patches", "manifests"]
+REPO, PREFIX = "Manaswi2006/RL_project", os.environ.get("HF_PREFIX", "core_extensions_2026")
+TOP = [t for t in os.environ.get("HF_TOP", "").split(";") if t]
+INC_DIRS = ["reports", "results", "figures", "configs", "logs", "scripts", "src", "tests", "runs", "patches", "manifests", "docs"]
 INC_FILES = ["README.md", "environment.yml", "requirements.lock", "run_all.sh", "reproduce.sh"] + [p.name for p in ROOT.glob("jobs_*.txt")]
-EXCL = ("__pycache__", ".pyc", "/vlm_label_set/", "logs/upload_hf.log", "logs/upload_hf2.log", "TRANSFER_AND_CLEANUP_MANIFEST", "manifests/")
+EXCL = ("__pycache__", ".pyc", "/vlm_label_set/", "logs/upload_hf.log", "logs/upload_hf2.log", "TRANSFER_AND_CLEANUP_MANIFEST", "manifests/", "logs/upload_")
 
 
 def token(env_file):
@@ -33,8 +34,9 @@ def local_files():
                 out[rel] = p
     for f in INC_FILES:
         if (ROOT / f).exists(): out[f] = ROOT / f
-    for f in ["FINAL_RESEARCH_REPORT.md", "FINAL_RESEARCH_REPORT.pdf", "MASTER_RESULTS.csv", "RESEARCH_DECISION.json", "REPRODUCIBILITY.md", "TRANSFER_AND_CLEANUP_MANIFEST.md", "TRANSFER_AND_CLEANUP_MANIFEST.json"]:
-        if (ROOT / "reports" / f).exists(): out["__top__/" + f] = ROOT / "reports" / f      # top-level copies live at <PREFIX>/<f>
+    tops = TOP or [f"reports/{f}" for f in ["FINAL_RESEARCH_REPORT.md", "FINAL_RESEARCH_REPORT.pdf", "MASTER_RESULTS.csv", "RESEARCH_DECISION.json", "REPRODUCIBILITY.md", "TRANSFER_AND_CLEANUP_MANIFEST.md", "TRANSFER_AND_CLEANUP_MANIFEST.json"]]
+    for rel in tops:
+        if (ROOT / rel).exists(): out["__top__/" + Path(rel).name] = ROOT / rel
     return out
 
 

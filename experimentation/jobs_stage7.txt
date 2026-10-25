@@ -1,0 +1,30 @@
+runs/stage7/rnd_vlm/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/button_s3 env=metaworld_button-press-topdown-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/hammer_s3 env=metaworld_hammer-v2 seed=3 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/button_s4 env=metaworld_button-press-topdown-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/hammer_s4 env=metaworld_hammer-v2 seed=4 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/button_s5 env=metaworld_button-press-topdown-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_vlm/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=vlm ep.agg=majority
+runs/stage7/rnd_oracle/hammer_s5 env=metaworld_hammer-v2 seed=5 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle
+runs/stage7/rnd_only/button_s0 env=metaworld_button-press-topdown-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle ep.weight=0.0
+runs/stage7/rnd_only/hammer_s0 env=metaworld_hammer-v2 seed=0 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle ep.weight=0.0
+runs/stage7/rnd_only/button_s1 env=metaworld_button-press-topdown-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle ep.weight=0.0
+runs/stage7/rnd_only/hammer_s1 env=metaworld_hammer-v2 seed=1 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle ep.weight=0.0
+runs/stage7/rnd_only/button_s2 env=metaworld_button-press-topdown-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle ep.weight=0.0
+runs/stage7/rnd_only/hammer_s2 env=metaworld_hammer-v2 seed=2 method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0 ep.source=oracle ep.weight=0.0

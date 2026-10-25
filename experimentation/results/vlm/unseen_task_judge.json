@@ -1,0 +1,202 @@
+{
+ "dial": {
+  "n": 348,
+  "n_success": 159,
+  "prevalence": 0.45689655172413796,
+  "majority": {
+   "acc": 0.8160919540229885,
+   "balanced_acc": 0.8092243186582808,
+   "precision": 0.8467153284671532,
+   "recall": 0.7295597484276729,
+   "specificity": 0.8888888888888888,
+   "fpr": 0.1111111111111111,
+   "fnr": 0.27044025157232704,
+   "auc": 0.8092243186582808,
+   "brier": 0.1839080459770115,
+   "ece": 0.1839080459770115,
+   "n": 348
+  },
+  "soft_vote_fraction": {
+   "acc": 0.8160919540229885,
+   "balanced_acc": 0.8092243186582808,
+   "precision": 0.8467153284671532,
+   "recall": 0.7295597484276729,
+   "specificity": 0.8888888888888888,
+   "fpr": 0.1111111111111111,
+   "fnr": 0.27044025157232704,
+   "auc": 0.8847292935343251,
+   "brier": 0.13218390804597702,
+   "ece": 0.1091954022988506,
+   "n": 348
+  },
+  "per_paraphrase": [
+   {
+    "acc": 0.7844827586206896,
+    "balanced_acc": 0.7731356693620844,
+    "precision": 0.85,
+    "recall": 0.6415094339622641,
+    "specificity": 0.9047619047619048,
+    "fpr": 0.09523809523809523,
+    "fnr": 0.3584905660377358,
+    "auc": 0.7731356693620843,
+    "brier": 0.21551724137931033,
+    "ece": 0.21551724137931036,
+    "n": 348
+   },
+   {
+    "acc": 0.8620689655172413,
+    "balanced_acc": 0.8515523609863231,
+    "precision": 0.9586776859504132,
+    "recall": 0.7295597484276729,
+    "specificity": 0.9735449735449735,
+    "fpr": 0.026455026455026454,
+    "fnr": 0.27044025157232704,
+    "auc": 0.8515523609863231,
+    "brier": 0.13793103448275862,
+    "ece": 0.1379310344827586,
+    "n": 348
+   },
+   {
+    "acc": 0.8074712643678161,
+    "balanced_acc": 0.808775082359988,
+    "precision": 0.7705882352941177,
+    "recall": 0.8238993710691824,
+    "specificity": 0.7936507936507936,
+    "fpr": 0.20634920634920634,
+    "fnr": 0.1761006289308176,
+    "auc": 0.8087750823599881,
+    "brier": 0.1925287356321839,
+    "ece": 0.1925287356321839,
+    "n": 348
+   }
+  ],
+  "reliability": [
+   {
+    "q": 0.0,
+    "n": 172,
+    "frac_success": 0.12790697674418605
+   },
+   {
+    "q": 0.3333333333333333,
+    "n": 39,
+    "frac_success": 0.5384615384615384
+   },
+   {
+    "q": 0.6666666666666666,
+    "n": 39,
+    "frac_success": 0.5128205128205128
+   },
+   {
+    "q": 1.0,
+    "n": 98,
+    "frac_success": 0.9795918367346939
+   }
+  ],
+  "error_corr": 0.506854013254409,
+  "sample_texts": [
+   "In the first frame, the red line on the dial is positioned at the top. In the last frame, the red line remains at the top, showing no change in position.\n\nVERDICT: No",
+   "In the first frame, the red line on the dial is positioned at the top. In the last frame, the red line remains at the top, showing no change in position.\n\nVERDICT: No",
+   "In the first frame, the red line on the dial is positioned at the top. In the last frame, the red line remains at the top, showing no change in position.\n\nVERDICT: No"
+  ]
+ },
+ "peg": {
+  "n": 396,
+  "n_success": 47,
+  "prevalence": 0.11868686868686869,
+  "majority": {
+   "acc": 0.8838383838383839,
+   "balanced_acc": 0.9340974212034384,
+   "precision": 0.5053763440860215,
+   "recall": 1.0,
+   "specificity": 0.8681948424068768,
+   "fpr": 0.1318051575931232,
+   "fnr": 0.0,
+   "auc": 0.9340974212034384,
+   "brier": 0.11616161616161616,
+   "ece": 0.11616161616161617,
+   "n": 396
+  },
+  "soft_vote_fraction": {
+   "acc": 0.8838383838383839,
+   "balanced_acc": 0.9340974212034384,
+   "precision": 0.5053763440860215,
+   "recall": 1.0,
+   "specificity": 0.8681948424068768,
+   "fpr": 0.1318051575931232,
+   "fnr": 0.0,
+   "auc": 0.9584527220630372,
+   "brier": 0.10830527497194163,
+   "ece": 0.14983164983164982,
+   "n": 396
+  },
+  "per_paraphrase": [
+   {
+    "acc": 0.7550505050505051,
+    "balanced_acc": 0.8610315186246418,
+    "precision": 0.3263888888888889,
+    "recall": 1.0,
+    "specificity": 0.7220630372492837,
+    "fpr": 0.27793696275071633,
+    "fnr": 0.0,
+    "auc": 0.8610315186246418,
+    "brier": 0.24494949494949494,
+    "ece": 0.24494949494949497,
+    "n": 396
+   },
+   {
+    "acc": 0.8838383838383839,
+    "balanced_acc": 0.9340974212034384,
+    "precision": 0.5053763440860215,
+    "recall": 1.0,
+    "specificity": 0.8681948424068768,
+    "fpr": 0.1318051575931232,
+    "fnr": 0.0,
+    "auc": 0.9340974212034384,
+    "brier": 0.11616161616161616,
+    "ece": 0.11616161616161617,
+    "n": 396
+   },
+   {
+    "acc": 0.9116161616161617,
+    "balanced_acc": 0.9498567335243553,
+    "precision": 0.573170731707317,
+    "recall": 1.0,
+    "specificity": 0.8997134670487106,
+    "fpr": 0.10028653295128939,
+    "fnr": 0.0,
+    "auc": 0.9498567335243553,
+    "brier": 0.08838383838383838,
+    "ece": 0.0883838383838384,
+    "n": 396
+   }
+  ],
+  "reliability": [
+   {
+    "q": 0.0,
+    "n": 246,
+    "frac_success": 0.0
+   },
+   {
+    "q": 0.3333333333333333,
+    "n": 57,
+    "frac_success": 0.0
+   },
+   {
+    "q": 0.6666666666666666,
+    "n": 17,
+    "frac_success": 0.0
+   },
+   {
+    "q": 1.0,
+    "n": 76,
+    "frac_success": 0.618421052631579
+   }
+  ],
+  "error_corr": 0.5900770505004492,
+  "sample_texts": [
+   "st frame, the green peg is positioned below the red block, ready to be inserted. In the last frame, the green peg remains in the same position, not yet inserted into the red block's hole.\n\nVERDICT: No",
+   "st frame, the green peg is positioned below the red block, ready to be inserted. In the last frame, the green peg remains in the same position, not yet inserted into the red block's hole.\n\nVERDICT: No",
+   "st frame, the green peg is positioned below the red block, ready to be inserted. In the last frame, the green peg remains in the same position, not yet inserted into the red block's hole.\n\nVERDICT: No"
+  ]
+ }
+}

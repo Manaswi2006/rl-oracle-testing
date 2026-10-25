@@ -1,0 +1,72 @@
+{
+ "hammer": {
+  "fp_training_exploits": {
+   "n": 60,
+   "accept_rate": {
+    "H0_majority": 0.9666666666666667,
+    "H1_unanimous3": 0.23333333333333334,
+    "H2_skeptic": 0.0,
+    "H3_change": 0.38333333333333336,
+    "H4_skeptic_and_H0": 0.0,
+    "H5_skeptic_and_change_and_H0": 0.0
+   }
+  },
+  "bank_successes": {
+   "n": 80,
+   "accept_rate": {
+    "H0_majority": 0.975,
+    "H1_unanimous3": 0.45,
+    "H2_skeptic": 0.0,
+    "H3_change": 0.85,
+    "H4_skeptic_and_H0": 0.0,
+    "H5_skeptic_and_change_and_H0": 0.0
+   }
+  },
+  "bank_failures": {
+   "n": 80,
+   "accept_rate": {
+    "H0_majority": 0.2875,
+    "H1_unanimous3": 0.0625,
+    "H2_skeptic": 0.0,
+    "H3_change": 0.4375,
+    "H4_skeptic_and_H0": 0.0,
+    "H5_skeptic_and_change_and_H0": 0.0
+   }
+  }
+ },
+ "button": {
+  "fp_training_exploits": {
+   "n": 15,
+   "accept_rate": {
+    "H0_majority": 0.9333333333333333,
+    "H1_unanimous3": 0.5333333333333333,
+    "H2_skeptic": 0.0,
+    "H3_change": 1.0,
+    "H4_skeptic_and_H0": 0.0,
+    "H5_skeptic_and_change_and_H0": 0.0
+   }
+  },
+  "bank_successes": {
+   "n": 80,
+   "accept_rate": {
+    "H0_majority": 0.9875,
+    "H1_unanimous3": 0.75,
+    "H2_skeptic": 0.0,
+    "H3_change": 1.0,
+    "H4_skeptic_and_H0": 0.0,
+    "H5_skeptic_and_change_and_H0": 0.0
+   }
+  },
+  "bank_failures": {
+   "n": 80,
+   "accept_rate": {
+    "H0_majority": 0.1625,
+    "H1_unanimous3": 0.0375,
+    "H2_skeptic": 0.0,
+    "H3_change": 1.0,
+    "H4_skeptic_and_H0": 0.0,
+    "H5_skeptic_and_change_and_H0": 0.0
+   }
+  }
+ }
+}

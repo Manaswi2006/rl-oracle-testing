@@ -1,0 +1,20 @@
+{
+ "button": {
+  "n": 160,
+  "parsed": 1.0,
+  "tie_frac": 0.93125,
+  "acc_incl_ties_as_wrong": 0.0375,
+  "acc_excl_ties": 0.5454545454545454,
+  "score_mean": 1.03125,
+  "secs": 9.8
+ },
+ "hammer": {
+  "n": 160,
+  "parsed": 1.0,
+  "tie_frac": 0.4875,
+  "acc_incl_ties_as_wrong": 0.2625,
+  "acc_excl_ties": 0.5121951219512195,
+  "score_mean": 41.40625,
+  "secs": 11.6
+ }
+}

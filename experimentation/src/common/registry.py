@@ -5,6 +5,9 @@ def get_ext(name):
     if name == "psvm":
         from src.psvm.psvm_ext import PSVMExt
         return PSVMExt
+    if name == "ep_outcome":
+        from src.vlm.episode_outcome_ext import EpisodeOutcomeExt
+        return EpisodeOutcomeExt
     if name == "outcome":
         from src.psvm.outcome_ext import OutcomeExt
         return OutcomeExt

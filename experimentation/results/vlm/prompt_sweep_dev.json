@@ -1,0 +1,132 @@
+{
+ "button|direct_all16": {
+  "n": 160,
+  "prevalence": 0.83125,
+  "acc": 0.16875,
+  "recall": 0.0,
+  "specificity": 1.0,
+  "balanced_acc": 0.5,
+  "secs": 14.6,
+  "examples": [
+   null,
+   null
+  ]
+ },
+ "button|direct_first_last": {
+  "n": 160,
+  "prevalence": 0.83125,
+  "acc": 0.16875,
+  "recall": 0.0,
+  "specificity": 1.0,
+  "balanced_acc": 0.5,
+  "secs": 1.8,
+  "examples": [
+   null,
+   null
+  ]
+ },
+ "button|cot_all16": {
+  "n": 160,
+  "prevalence": 0.83125,
+  "acc": 0.8625,
+  "recall": 0.8947368421052632,
+  "specificity": 0.7037037037037037,
+  "balanced_acc": 0.7992202729044835,
+  "secs": 5.6,
+  "examples": [
+   " yellow base. In the last frame, the red button is fully depressed, flush with the yellow surface, indicating it has been pressed down completely.\n\nVERDICT: Yes",
+   "th its black stem visible. In the last frame, the red button is fully depressed, flush with the yellow surface, indicating the action is complete.\n\nVERDICT: Yes"
+  ]
+ },
+ "button|cot_first_last": {
+  "n": 160,
+  "prevalence": 0.83125,
+  "acc": 0.83125,
+  "recall": 1.0,
+  "specificity": 0.0,
+  "balanced_acc": 0.5,
+  "secs": 4.7,
+  "examples": [
+   "black stem on the yellow base. In the last frame, the red button is completely depressed, flush with the yellow surface, indicating full actuation. VERDICT: Yes",
+   "black stem on the yellow base. In the last frame, the red button is completely depressed, flush with the yellow surface, indicating full actuation. VERDICT: Yes"
+  ]
+ },
+ "button|cot_first_last4": {
+  "n": 160,
+  "prevalence": 0.83125,
+  "acc": 0.9375,
+  "recall": 0.9548872180451128,
+  "specificity": 0.8518518518518519,
+  "balanced_acc": 0.9033695349484823,
+  "secs": 8.4,
+  "examples": [
+   " has not been pressed. In the last frame, the button is fully depressed, sitting flush with the yellow surface, indicating the action is complete.\n\nVERDICT: Yes",
+   " has not been pressed. In the last frame, the button is fully depressed, sitting flush with the yellow surface, indicating the action is complete.\n\nVERDICT: Yes"
+  ]
+ },
+ "hammer|direct_all16": {
+  "n": 160,
+  "prevalence": 0.6125,
+  "acc": 0.3875,
+  "recall": 0.0,
+  "specificity": 1.0,
+  "balanced_acc": 0.5,
+  "secs": 16.0,
+  "examples": [
+   null,
+   null
+  ]
+ },
+ "hammer|direct_first_last": {
+  "n": 160,
+  "prevalence": 0.6125,
+  "acc": 0.39375,
+  "recall": 0.01020408163265306,
+  "specificity": 1.0,
+  "balanced_acc": 0.5051020408163265,
+  "secs": 2.1,
+  "examples": [
+   null,
+   null
+  ]
+ },
+ "hammer|cot_all16": {
+  "n": 160,
+  "prevalence": 0.6125,
+  "acc": 0.7125,
+  "recall": 0.7040816326530612,
+  "specificity": 0.7258064516129032,
+  "balanced_acc": 0.7149440421329822,
+  "secs": 7.3,
+  "examples": [
+   "ke. In the last frame, the hammer is shown in a resting position, and the nail is now fully embedded in the wood, indicating the task is complete.\n\nVERDICT: Yes",
+   " ready to strike. In the last frame, the nail is fully embedded in the wood, and the hammer is resting beside it, indicating the task is complete.\n\nVERDICT: Yes"
+  ]
+ },
+ "hammer|cot_first_last": {
+  "n": 160,
+  "prevalence": 0.6125,
+  "acc": 0.575,
+  "recall": 0.3469387755102041,
+  "specificity": 0.9354838709677419,
+  "balanced_acc": 0.641211323238973,
+  "secs": 5.2,
+  "examples": [
+   "mer resting nearby. In the last frame, the red hammer is positioned directly over the nail, indicating it has just been used to drive it further in. VERDICT: No",
+   ", with a red hammer resting nearby. In the last frame, the red hammer is positioned directly on the nail's head, indicating it has just been struck. VERDICT: No"
+  ]
+ },
+ "hammer|cot_first_last4": {
+  "n": 160,
+  "prevalence": 0.6125,
+  "acc": 0.64375,
+  "recall": 0.46938775510204084,
+  "specificity": 0.9193548387096774,
+  "balanced_acc": 0.6943712969058591,
+  "secs": 10.0,
+  "examples": [
+   "t yet in use. In the last frame, the red hammer is positioned over the nail, indicating the hammering action has been completed or is in progress.\n\nVERDICT: Yes",
+   "ith a red hammer resting nearby. In the last frame, the red hammer is positioned over the nail, indicating the hammering action has been completed. VERDICT: Yes"
+  ]
+ }
+}

@@ -14,7 +14,7 @@ class OutcomeExt(RewardExt):
         super().__init__(cfg, obs_dim, act_dim, device, seed)
         self.ready = True
 
-    def step_reward(self, success):
+    def step_reward(self, success, next_obs=None):
         return float(success)
 
     def reward_batch(self, obs, act, next_obs):

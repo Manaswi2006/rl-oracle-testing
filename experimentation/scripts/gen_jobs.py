@@ -64,4 +64,32 @@ if stage == "stage5":   # mechanism controls for P-SVM: plain sparse outcome rew
             out.append(f"runs/stage5/outcome_sparse/{t}_s{seed} env={T5[t]} seed={seed} method=ext ext_name=outcome")
         for t in ("button", "hammer"):
             out.append(f"runs/stage5/psvm_noRRM/{t}_s{seed} env={T5[t]} seed={seed} method=ext ext_name=psvm psvm.mode=oracle_hard reward_alpha=0.0")
+if stage == "stage6":   # VLM-judged episode outcome vs oracle episode outcome (Qwen3-VL-8B served locally on port 8000)
+    base = "method=ext ext_name=ep_outcome ep.ports=8000"
+    for seed in range(6):
+        for t in ("button", "hammer"):
+            out.append(f"runs/stage6/ep_oracle/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=oracle")
+            out.append(f"runs/stage6/ep_vlm_major/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=vlm ep.agg=majority")
+            out.append(f"runs/stage6/ep_vlm_soft/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=vlm ep.agg=soft")
+    for seed in range(3):
+        for t in ("button", "hammer"):
+            out.append(f"runs/stage6/ep_oracle_noRRM/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=oracle reward_alpha=0.0")
+            out.append(f"runs/stage6/ep_vlm_noRRM/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=vlm ep.agg=majority reward_alpha=0.0")
+if stage == "stage7":   # exploration bonus (RND on the policy's own observation, beta=0.1, untuned) + episode verdict; RRM weight 0 => no environment reward reaches the policy
+    base = "method=ext ext_name=ep_outcome ep.ports=8000 ep.rnd_beta=0.1 reward_alpha=0.0"
+    for seed in range(6):
+        for t in ("button", "hammer"):
+            out.append(f"runs/stage7/rnd_vlm/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=vlm ep.agg=majority")
+            out.append(f"runs/stage7/rnd_oracle/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=oracle")
+    for seed in range(3):
+        for t in ("button", "hammer"):
+            out.append(f"runs/stage7/rnd_only/{t}_s{seed} env={TASKS[t]} seed={seed} {base} ep.source=oracle ep.weight=0.0")
+if stage == "stage8":   # short diagnostic runs that save frames + reasoning of false-positive VLM verdicts (the verifier-hacking evidence)
+    for seed in (10, 11):
+        for t in ("hammer", "button"):
+            out.append(f"runs/stage8/fp_diag/{t}_s{seed} env={TASKS[t]} seed={seed} method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority num_train_steps=70000 num_final_eval_episodes=10 diag_episodes=0")
+if stage == "stage8b":   # repeat of the diagnostics saving the exact judge inputs of false positives (used by the hardening test)
+    for seed in (20, 21):
+        for t in ("hammer", "button"):
+            out.append(f"runs/stage8/fp_diag/{t}_s{seed} env={TASKS[t]} seed={seed} method=ext ext_name=ep_outcome ep.ports=8000 ep.source=vlm ep.agg=majority num_train_steps=70000 num_final_eval_episodes=10 diag_episodes=0")
 print("\n".join(out))
