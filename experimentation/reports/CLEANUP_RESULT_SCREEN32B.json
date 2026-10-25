@@ -1,0 +1,39 @@
+{
+ "time": "2026-10-25 13:39:12 PDT",
+ "study": "Part 3: 32B verifier screen",
+ "deleted": [
+  "/home/colligo/working/manaswi/experimentation",
+  "/mnt/localssd/manaswi_vlm_screen (71 GB model cache + scratch)"
+ ],
+ "both_gone": true,
+ "preconditions": {
+  "canonical_paths_matched": true,
+  "symlinks": false,
+  "vllm_stopped": true,
+  "gpus_free": true,
+  "hf_upload_verified": "11/11 files matched by sha256 in vlm_verifier_screen_2026/ (revision 06bda596ebd213831833378c604a2ee4229f3fc1)",
+  "github_commit": "3dfa27072f31dd2670aaa135eb0c32af5401ab40"
+ },
+ "neighbors": {
+  "DATASET_GENERATION": {
+   "before": 686334,
+   "after": 686334,
+   "intact": true
+  },
+  "localssd_dot_cache": {
+   "before": 19397,
+   "after": 19397,
+   "intact": true
+  },
+  "localssd_manaswi": {
+   "before": 29792276,
+   "after": 29797637,
+   "note": "this directory was already being modified by another process (mtime changed during my session, +5,361 entries during the deletion window); I never read or wrote it"
+  }
+ },
+ "not_transferred": [
+  "Qwen3-VL-32B-Instruct weights (public, re-downloadable)",
+  "venvs/caches",
+  "downloaded copies of the earlier study's episode banks and exploit frames (already on HF under vlm_outcome_2026/)"
+ ]
+}
