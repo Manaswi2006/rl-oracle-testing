@@ -123,3 +123,14 @@ In short: **the missing piece is not more guidance, it is a success verifier the
 | master result tables | `reports/MASTER_RESULTS.csv` (Part 1), `results/vlm/MASTER_RESULTS_VLM.csv` (Part 2) |
 
 The server workspace (`/home/colligo/working/manaswi/experimentation`) was deleted after both uploads were verified. To rerun anything: clone the GitHub repo and follow `experimentation/README.md` (`reproduce.sh` rebuilds the environment; the VLM server command is in the README).
+
+---
+
+## 9. Addendum (Part 3, 2026-10-25): does a bigger VLM fix the exploited verifier?
+
+We screened Qwen3-VL-32B (open weights, served locally; no paid API) and some stricter judging procedures offline against the real exploits the policy found (`reports/VERIFIER_SCREEN_32B_REPORT.md`).
+
+* **A bigger model is more conservative, not simply better.** On Hammer the 32B rejects 97% of the exploits the 8B fell for and has a 1.2% false-positive rate (precision 0.98 vs 0.74), but recall drops from 0.96 to 0.73. On the unseen tasks balanced accuracy falls (Dial Turn 0.66 vs 0.81, Peg Insert 0.75 vs 0.93) while precision rises.
+* **Pre-registered rule** (reject >= 70% of exploits and accept >= 85% of true successes): passed only on Button Press, by the *sustained check* (each of the last four frames judged separately, >= 3 of 4 must agree): 87% of exploits rejected, 99% of successes accepted (15 exploits, uncertain). Nothing passes on Hammer.
+* **Implication for the paid-API question:** scale mostly shifts the precision/recall trade-off; it did not remove the blind spots we could test. I would not expect any single fixed judge to end reward hacking.
+* **Next test:** run the 32B verdict and the sustained check in the training loop (10+ seeds) and compare the in-loop false-positive curves. A low-recall, high-precision judge may still train a policy, because missed successes only delay reward, while false positives are what gets hacked. That is an argument, not yet a result.

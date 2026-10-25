@@ -564,3 +564,15 @@ Timeline of deletion: the Part 1 workspace was deleted after verified transfer (
 * The preference tests used the environment-reward sum as "ground truth", which is itself an imperfect notion of "closer to done".
 * GPU hours are wall-clock hours of runs sharing a GPU with ~8 other runs, so only relative overheads are meaningful.
 * Peg Insert and Dial Turn have 3 seeds; Sweep Into, Drawer Open, Soccer and SoftGym were not run.
+
+
+---
+
+## 19. Part 3: 32B verifier screen (2026-10-25, after the sections above)
+
+Question you asked: *would a bigger / paid VLM make the exploited-verifier problem go away?* I answered "probably not by itself" and proposed an offline screen with Qwen3-VL-32B on the saved exploits. **Done** (`reports/VERIFIER_SCREEN_32B_REPORT.md`, `results/vlm/screen_32b.json`, `scripts/vlm/screen_verifier.py`).
+
+* Setup: bf16 weights (66.7 GB) on `/mnt/localssd/manaswi_vlm_screen/` (a 4.9 TB volume; I first misread a different disk's 179 GB as its free space and you corrected me), tensor parallel over two A100s, ~1.5 h of compute, workspace and model cache deleted afterwards.
+* Result: the 32B judge is far more conservative (Hammer: exploit acceptance 3% vs 97% for the 8B, false-positive rate 1.2%, but recall 0.73 vs 0.96; Dial Turn recall 0.33; Peg Insert recall 0.53 with precision 0.76 vs 0.51). The pre-registered rule passed only on Button Press via the sustained 3-of-4-frames check.
+* Mistakes during this part (fixed): the screen first ran while the exploit files were still being copied (26 of 60 Hammer exploits), so I restarted it; a `pkill -f` pattern matched my own shell once more.
+* Recommended next step unchanged in spirit: put the 32B verdict and the sustained check in the training loop with 10+ seeds and compare the in-loop false-positive curves. Not run.
